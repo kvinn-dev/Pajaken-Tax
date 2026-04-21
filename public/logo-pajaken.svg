@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 729.73 205.5">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        fill: #5441e5;
+        font-family: MadaniArabic-SemiBold, MadaniArabic-SemiBold;
+        font-size: 135.94px;
+        font-weight: 600;
+        letter-spacing: -.01em;
+      }
+
+      .cls-4 {
+        fill: #4120b7;
+      }
+    </style>
+    <clipPath id="clippath">
+      <path class="cls-2" d="M119.39,0H17.11C7.66,0,0,7.66,0,17.11v76.86c1.7,2.82,4.5,5.47,8,6.03,1.33.21,2.47.08,3,0,2.88-.45,4.8-2.07,5.59-2.84l28.53-28.53c3.45-3.45,3.45-9.05,0-12.5l-7.01-7.01c-5.45-5.45-1.59-14.77,6.12-14.77h49.64c4.76,0,8.62,3.86,8.62,8.62v51.64c0,7.71-9.32,11.57-14.77,6.12l-7.98-7.98c-3.45-3.45-9.05-3.45-12.5,0l-43.75,43.75-4.21,4.21c-6.51,6.51-6.51,17.06,0,23.57l35.21,35.21c3.85,3.85,9.06,6.01,14.5,6.01,7.12,0,12.89-5.77,12.89-12.89v-56.11h37.51c9.45,0,17.11-7.66,17.11-17.11V17.11c0-9.45-7.66-17.11-17.11-17.11Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="139.75" y1="-4.25" x2="-1.75" y2="137.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5889ff"/>
+      <stop offset=".33" stop-color="#5c50ff"/>
+      <stop offset=".63" stop-color="#5f24ff"/>
+      <stop offset=".86" stop-color="#610aff"/>
+      <stop offset="1" stop-color="#6200ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g class="cls-1">
+      <rect class="cls-3" x="-2.5" y="-3.5" width="143" height="140"/>
+      <rect class="cls-4" x="-.5" y="136.5" width="109" height="79"/>
+    </g>
+    <text class="cls-5" transform="translate(184.08 134.25)"><tspan x="0" y="0">Pajaken</tspan></text>
+  </g>
+</svg>

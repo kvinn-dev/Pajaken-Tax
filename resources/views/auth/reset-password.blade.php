@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="min-h-screen flex">
         <!-- LEFT SIDE - ILLUSTRATION -->
-        <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-700">
+        <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-[#4f46e5] via-[#2563eb] to-[#7c3aed]">
             <!-- Decorative Shapes -->
             <div class="absolute top-0 left-0 w-96 h-96 -translate-x-1/2 -translate-y-1/2">
                 <div class="w-full h-full bg-white/10 rounded-full blur-3xl"></div>
@@ -79,7 +79,7 @@
                 </div>
 
                 <!-- Floating Elements -->
-                <div class="absolute bottom-20 left-20 w-20 h-20 bg-white/10 rounded-2xl backdrop-blur-sm flex items-center justify-center animate-float-slow">
+                <div class="absolute bottom-20 right-20 w-20 h-20 bg-white/10 rounded-2xl backdrop-blur-sm flex items-center justify-center animate-float-slow">
                     <svg class="w-8 h-8 text-white/60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
                     </svg>
@@ -98,7 +98,7 @@
                 <!-- Mobile Logo (Visible only on mobile) -->
                 <div class="lg:hidden text-center mb-8">
                     <div class="inline-flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-violet-600 to-purple-600 rounded-xl flex items-center justify-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
@@ -119,15 +119,15 @@
                 <x-auth-session-status class="mb-4" :status="session('status')" />
 
                 <!-- Email Display Card -->
-                <div class="mb-6 p-4 bg-violet-50 border border-violet-200 rounded-xl">
+                <div class="mb-6 p-4 bg-indigo-50 border border-indigo-200 rounded-xl">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-5 h-5 text-violet-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                         </div>
                         <div>
-                            <p class="text-xs text-violet-600 font-medium">Mereset password untuk</p>
+                            <p class="text-xs text-indigo-600 font-medium">Mereset password untuk</p>
                             <p class="text-sm font-semibold text-gray-900">{{ old('email', $request->email) }}</p>
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                                 required 
                                 autocomplete="new-password"
                                 placeholder="Minimal 8 karakter"
-                                class="block w-full pl-10 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400 bg-gray-50/50 hover:bg-gray-50"
+                                class="block w-full pl-10 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400 bg-gray-50/50 hover:bg-gray-50"
                             >
                             <button 
                                 type="button" 
@@ -205,7 +205,7 @@
                                 required 
                                 autocomplete="new-password"
                                 placeholder="Ulangi kata sandi baru"
-                                class="block w-full pl-10 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400 bg-gray-50/50 hover:bg-gray-50"
+                                class="block w-full pl-10 pr-12 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400 bg-gray-50/50 hover:bg-gray-50"
                             >
                             <button 
                                 type="button" 
@@ -226,7 +226,7 @@
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" class="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white py-3.5 px-4 rounded-xl font-semibold hover:from-violet-700 hover:to-purple-700 focus:ring-4 focus:ring-violet-200 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                    <button type="submit" class="w-full bg-[#4f46e5] text-white py-3.5 px-4 rounded-xl font-semibold hover:bg-[#4338ca] focus:ring-4 focus:ring-indigo-200 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
                         </svg>
@@ -282,7 +282,7 @@
 
                 // Update bars
                 strengthBars.forEach((bar, index) => {
-                    bar.classList.remove('bg-gray-200', 'bg-red-400', 'bg-orange-400', 'bg-yellow-400', 'bg-green-400', 'bg-violet-500');
+                    bar.classList.remove('bg-gray-200', 'bg-red-400', 'bg-orange-400', 'bg-yellow-400', 'bg-green-400', 'bg-indigo-200');
                     
                     if (index < strength) {
                         if (strength === 1) bar.classList.add('bg-red-400');

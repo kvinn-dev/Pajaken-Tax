@@ -15,6 +15,8 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware('role:user')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::post('/dashboard/verify-nik', [DashboardController::class, 'verifyNik'])->name('verify.nik');
+
+        Route::get('/about', [DashboardController::class, 'about'])->name('about.index');
         
         Route::get('/cek-pajak', [DashboardController::class, 'taxCheck'])->name('tax-check.index');
         

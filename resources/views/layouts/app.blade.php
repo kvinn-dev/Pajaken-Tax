@@ -28,7 +28,7 @@
 
         <div class="nav-center">
             <a href="{{ route('dashboard') }}#beranda" class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">Beranda</a>
-            <a href="{{ route('dashboard') }}#tentang" class="nav-item">Tentang</a>
+            <a href="{{ route('about.index') }}" class="nav-item {{ request()->routeIs('about.index') ? 'active' : '' }}">Tentang</a>
             <a href="{{ route('tax-check.index') }}" class="nav-item {{ request()->routeIs('tax-check.index') ? 'active' : '' }}">Cek Pajak</a>
             <a href="{{ route('reminder.index') }}" class="nav-item {{ request()->routeIs('reminder.index') ? 'active' : '' }}">Pengingat</a>
         </div>

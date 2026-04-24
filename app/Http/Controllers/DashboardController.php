@@ -34,6 +34,11 @@ class DashboardController extends Controller
         return view('tax-check.index', compact('vehicles'));
     }
 
+    public function about()
+    {
+        return view('about.index');
+    }
+
     public function verifyNik(Request $request)
     {
         $request->validate(['nik' => 'required|digits:16']);

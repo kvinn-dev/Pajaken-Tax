@@ -22,10 +22,10 @@
                     <!-- Left Content -->
                     <div class="text-center lg:text-left space-y-8">
                         <!-- Badge -->
-                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100/80 backdrop-blur-sm rounded-full text-blue-700 text-sm font-medium">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100/80 backdrop-blur-sm rounded-full text-blue-700 text-sm font-medium">
                             <span class="relative flex h-2 w-2">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                             </span>
                             Terpercaya oleh 10.000+ pengguna
                         </div>
@@ -34,7 +34,7 @@
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
                             Kelola Pajak
                             <br>
-                            <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Lebih Mudah</span>
+                            <span class="bg-gradient-to-r from-[#4f46e5] to-[#2563eb] bg-clip-text text-transparent">Lebih Mudah</span>
                             & Cepat
                         </h1>
 
@@ -46,7 +46,7 @@
 
                         <!-- CTA Buttons -->
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <a href="{{ route('tax-check.index') }}" class="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                            <a href="{{ route('tax-check.index') }}" class="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#2563eb] to-[#4f46e5] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
                                 <svg class="w-6 h-6 group-hover:animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                 </svg>
@@ -55,7 +55,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
                             </a>
-                            <a href="#tentang" class="inline-flex items-center justify-center gap-2 bg-white text-gray-700 px-8 py-4 rounded-2xl font-semibold border-2 border-gray-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-300">
+                            <a href="{{ route('about.index') }}" class="inline-flex items-center justify-center gap-2 bg-white text-gray-700 px-8 py-4 rounded-2xl font-semibold border-2 border-gray-200 hover:border-blue-300 hover:text-blue-600 transition-all duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
@@ -86,7 +86,7 @@
                             <!-- Main Dashboard Preview -->
                             <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
                                 <!-- Header Bar -->
-                                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4 flex items-center justify-between">
+                                <div class="bg-gradient-to-r from-[#2563eb] to-[#4f46e5] px-6 py-4 flex items-center justify-between">
                                     <div class="flex items-center gap-2">
                                         <div class="w-3 h-3 bg-red-400 rounded-full"></div>
                                         <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -153,19 +153,19 @@
                 <div class="max-w-7xl mx-auto mt-20">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 text-center hover:bg-white hover:shadow-lg transition-all duration-300">
-                            <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">10K+</div>
+                            <div class="text-3xl font-bold bg-gradient-to-r from-[#2563eb] to-[#4f46e5] bg-clip-text text-transparent">10K+</div>
                             <div class="text-sm text-gray-500 mt-1">Pengguna Aktif</div>
                         </div>
                         <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 text-center hover:bg-white hover:shadow-lg transition-all duration-300">
-                            <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">50K+</div>
+                            <div class="text-3xl font-bold bg-gradient-to-r from-[#2563eb] to-[#4f46e5] bg-clip-text text-transparent">50K+</div>
                             <div class="text-sm text-gray-500 mt-1">Kendaraan Terdaftar</div>
                         </div>
                         <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 text-center hover:bg-white hover:shadow-lg transition-all duration-300">
-                            <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">99%</div>
+                            <div class="text-3xl font-bold bg-gradient-to-r from-[#2563eb] to-[#4f46e5] bg-clip-text text-transparent">99%</div>
                             <div class="text-sm text-gray-500 mt-1">Tepat Waktu</div>
                         </div>
                         <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 text-center hover:bg-white hover:shadow-lg transition-all duration-300">
-                            <div class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">24/7</div>
+                            <div class="text-3xl font-bold bg-gradient-to-r from-[#2563eb] to-[#4f46e5] bg-clip-text text-transparent">24/7</div>
                             <div class="text-sm text-gray-500 mt-1">Dukungan</div>
                         </div>
                     </div>
@@ -174,11 +174,10 @@
         </section>
     </div>
 
-    <!-- SECTION: ABOUT / TENTANG -->
-    <section id="tentang" class="about-section py-24 bg-white">
+    <section class="about-section py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Mengapa Pajaken?</span>
+                <span class="text-[#4f46e5] font-semibold text-sm uppercase tracking-wider">Mengapa Pajaken?</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">Kelola Pajak Kendaraan dengan Mudah</h2>
                 <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Solusi lengkap dan terpercaya untuk mengelola pajak kendaraan Anda</p>
             </div>
@@ -186,7 +185,7 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
                 <div class="group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300">
-                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <div class="w-14 h-14 bg-gradient-to-br from-[#2563eb] to-[#4f46e5] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                         </svg>
@@ -229,19 +228,19 @@
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Proses Mudah</span>
+                <span class="text-[#4f46e5] font-semibold text-sm uppercase tracking-wider">Proses Mudah</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">Cara Kerja Pajaken</h2>
                 <p class="mt-4 text-lg text-gray-500">Hanya 3 langkah untuk mengelola pajak kendaraan Anda</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 relative">
                 <!-- Connecting Line (Desktop) -->
-                <div class="hidden md:block absolute top-16 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-blue-200 via-emerald-200 to-purple-200"></div>
+                <div class="hidden md:block absolute top-16 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-blue-200 via-indigo-200 to-purple-200"></div>
 
                 <!-- Step 1 -->
                 <div class="relative text-center">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg border-4 border-blue-100 mb-6 relative z-10">
-                        <span class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">1</span>
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg border-4 border-indigo-100 mb-6 relative z-10">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-[#2563eb] to-[#4f46e5] bg-clip-text text-transparent">1</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Cek Status</h3>
                     <p class="text-gray-500">Masukkan NIK untuk mengecek status pajak kendaraan Anda secara real-time</p>
@@ -249,8 +248,8 @@
 
                 <!-- Step 2 -->
                 <div class="relative text-center">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg border-4 border-emerald-100 mb-6 relative z-10">
-                        <span class="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">2</span>
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg border-4 border-indigo-100 mb-6 relative z-10">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-[#2563eb] to-[#4f46e5] bg-clip-text text-transparent">2</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Atur Pengingat</h3>
                     <p class="text-gray-500">Aktifkan notifikasi otomatis untuk mengingatkan jatuh tempo pajak</p>
@@ -258,8 +257,8 @@
 
                 <!-- Step 3 -->
                 <div class="relative text-center">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg border-4 border-purple-100 mb-6 relative z-10">
-                        <span class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">3</span>
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg border-4 border-indigo-100 mb-6 relative z-10">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-[#2563eb] to-[#4f46e5] bg-clip-text text-transparent">3</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Bayar Tepat Waktu</h3>
                     <p class="text-gray-500">Lakukan pembayaran sebelum jatuh tempo dan hindari denda</p>
@@ -268,7 +267,7 @@
 
             <!-- Bottom CTA -->
             <div class="text-center mt-16">
-                <a href="{{ route('tax-check.index') }}" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-4 rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300">
+                <a href="{{ route('tax-check.index') }}" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563eb] to-[#4f46e5] text-white px-10 py-4 rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300">
                     Mulai Cek Pajak Sekarang
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>

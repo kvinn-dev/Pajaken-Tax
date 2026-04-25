@@ -22,8 +22,8 @@
 
     <!-- TOP NAVIGATION REUSABLE -->
     <header class="top-nav">
-        <a href="{{ route('dashboard') }}" class="logo">
-            <img src="{{ asset('logo-pajaken.svg') }}" alt="Logo Pajaken" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png';" />
+        <a href="{{ route('dashboard') }}#beranda" class="logo">
+            <img src="{{ asset('logo-pajaken.svg') }}" alt="Logo Pajaken" />
         </a>
 
         <div class="nav-center">
@@ -35,7 +35,7 @@
 
         <div class="nav-right">
             <div class="nav-bell">
-                <svg width="24" height="24" fill="none" stroke="var(--clr-primary)" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="24" height="24" fill="none" stroke="#4f46e5" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9zm-6 13a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
                 </svg>
                 <div class="bell-dot"></div>

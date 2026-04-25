@@ -9,7 +9,7 @@
             <div class="w-full h-full bg-gradient-to-tr from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl"></div>
         </div>
 
-        <section class="relative pt-24 pb-16 md:pt-32 md:pb-24">
+        <section class="relative py-10 md:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto">
                     <!-- Badge -->
@@ -410,14 +410,11 @@
                         Bergabung dengan 10.000+ pengguna yang sudah merasakan kemudahan Pajaken. Mulai sekarang dan ucapkan selamat tinggal pada denda!
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="{{ route('tax-check.index') }}" class="inline-flex items-center justify-center gap-2 bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
+                        <a href="{{ route('tax-check.index') }}" class="inline-flex items-center justify-center gap-2 bg-white text-[#4f46e5] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
                             Cek Pajak Sekarang
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                             </svg>
-                        </a>
-                        <a href="{{ route('register') }}" class="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-all duration-300">
-                            Daftar Gratis
                         </a>
                     </div>
                 </div>

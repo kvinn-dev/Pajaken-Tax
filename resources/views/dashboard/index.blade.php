@@ -16,7 +16,7 @@
         </div>
 
         <!-- SECTION: HERO -->
-        <section id="beranda" class="relative w-full py-20 md:py-28">
+        <section id="beranda" class="relative w-full pt-24 pb-16 md:pt-32 md:pb-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <!-- Left Content -->
@@ -179,7 +179,7 @@
             <div class="text-center mb-16">
                 <span class="text-[#4f46e5] font-semibold text-sm uppercase tracking-wider">Mengapa Pajaken?</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">Kelola Pajak Kendaraan dengan Mudah</h2>
-                <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Solusi lengkap dan terpercaya untuk mengelola pajak kendaraan Anda</p>
+                <p class="mt-2 text-lg text-gray-500 max-w-2xl mx-auto">Solusi lengkap dan terpercaya untuk mengelola pajak kendaraan Anda</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -230,7 +230,7 @@
             <div class="text-center mb-16">
                 <span class="text-[#4f46e5] font-semibold text-sm uppercase tracking-wider">Proses Mudah</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">Cara Kerja Pajaken</h2>
-                <p class="mt-4 text-lg text-gray-500">Hanya 3 langkah untuk mengelola pajak kendaraan Anda</p>
+                <p class="mt-2 text-lg text-gray-500">Hanya 3 langkah untuk mengelola pajak kendaraan Anda</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 relative">

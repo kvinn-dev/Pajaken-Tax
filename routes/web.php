@@ -15,10 +15,13 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware('role:user')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::post('/dashboard/verify-nik', [DashboardController::class, 'verifyNik'])->name('verify.nik');
+        Route::post('/dashboard/reset-nik', [DashboardController::class, 'resetNik'])->name('reset.nik');
 
         Route::get('/about', [DashboardController::class, 'about'])->name('about.index');
         
         Route::get('/cek-pajak', [DashboardController::class, 'taxCheck'])->name('tax-check.index');
+        // Rute dummy untuk menghindari error saat tombol "Bayar" ditekan
+        Route::get('/pembayaran/{id}', function() { return "Halaman Pembayaran sedang dikembangkan."; })->name('payment.create');
         
         // Reminder Resource
         Route::get('/pengingat', [ReminderController::class, 'index'])->name('reminder.index');

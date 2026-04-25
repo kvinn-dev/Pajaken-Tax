@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Nik;
+use App\Models\Vehicle;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -15,7 +16,10 @@ class DashboardController extends Controller
 
         // Ambil kendaraan jika NIK sudah terisi dan valid
         if ($user->nik) {
-            $vehicles = $user->vehicles;
+            $nikRecord = Nik::where('nik', $user->nik)->first();
+            if ($nikRecord) {
+                $vehicles = Vehicle::where('nik_id', $nikRecord->id)->get();
+            }
         }
 
         return view('dashboard.index', compact('vehicles'));
@@ -28,7 +32,10 @@ class DashboardController extends Controller
 
         // Ambil kendaraan jika NIK sudah terisi dan valid
         if ($user->nik) {
-            $vehicles = $user->vehicles;
+            $nikRecord = Nik::where('nik', $user->nik)->first();
+            if ($nikRecord) {
+                $vehicles = Vehicle::where('nik_id', $nikRecord->id)->get();
+            }
         }
 
         return view('tax-check.index', compact('vehicles'));
@@ -54,5 +61,14 @@ class DashboardController extends Controller
         }
 
         return back()->withErrors(['nik' => 'NIK tidak ditemukan di sistem kami.']);
+    }
+
+    public function resetNik(Request $request)
+    {
+        $user = $request->user();
+        $user->nik = null;
+        $user->save();
+
+        return back()->with('success', 'Data NIK berhasil direset. Silakan verifikasi NIK baru Anda.');
     }
 }

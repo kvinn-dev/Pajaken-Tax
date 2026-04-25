@@ -68,17 +68,17 @@
                     <div class="relative hidden lg:block">
                         <!-- Main Illustration Card -->
                         <div class="relative z-10">
-                            <!-- Floating Card 1 -->
-                            <div class="absolute -top-12 -left-12 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20">
+                            <!-- Floating Card 1 - Fitur -->
+                            <div class="absolute -top-10 -left-10 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                                         </svg>
                                     </div>
                                     <div>
-                                        <div class="text-sm font-semibold text-gray-800">Pajak Aktif</div>
-                                        <div class="text-xs text-gray-500">2 Kendaraan</div>
+                                        <div class="text-sm font-semibold text-gray-800">Pengingat Otomatis</div>
+                                        <div class="text-xs text-gray-500">Sebelum jatuh tempo</div>
                                     </div>
                                 </div>
                             </div>
@@ -92,63 +92,88 @@
                                         <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
                                         <div class="w-3 h-3 bg-green-400 rounded-full"></div>
                                     </div>
-                                    <div class="text-white text-sm font-medium">Pajaken Dashboard</div>
                                     <div class="w-6 h-6"></div>
                                 </div>
 
-                                <!-- Content Preview -->
+                                <!-- Content Preview - Fitur Pajaken -->
                                 <div class="p-6 space-y-4">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <div class="text-xs text-gray-400 uppercase tracking-wider">Total Kendaraan</div>
-                                            <div class="text-2xl font-bold text-gray-800">3 Unit</div>
-                                        </div>
-                                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                                            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                                    <!-- Feature 1 -->
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                             </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-gray-800">Cek Pajak Real-Time</h4>
+                                            <p class="text-xs text-gray-500 mt-0.5">Cukup masukkan NIK, semua data kendaraan muncul instan.</p>
                                         </div>
                                     </div>
 
-                                    <div class="space-y-3">
-                                        <div class="bg-gray-50 rounded-xl p-3 flex items-center gap-3">
-                                            <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">🚗</div>
-                                            <div class="flex-1">
-                                                <div class="text-sm font-medium text-gray-800">B 1234 ABC</div>
-                                                <div class="text-xs text-gray-500">Jatuh tempo: 15 Mar 2026</div>
-                                            </div>
-                                            <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full font-medium">Aktif</span>
+                                    <!-- Feature 2 -->
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                            </svg>
                                         </div>
-                                        <div class="bg-gray-50 rounded-xl p-3 flex items-center gap-3">
-                                            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">🏍️</div>
-                                            <div class="flex-1">
-                                                <div class="text-sm font-medium text-gray-800">B 5678 XYZ</div>
-                                                <div class="text-xs text-red-500">Jatuh tempo: 1 Jan 2026</div>
-                                            </div>
-                                            <span class="px-2 py-1 bg-red-100 text-red-700 text-xs rounded-full font-medium">Lewat</span>
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-gray-800">Notifikasi Cerdas</h4>
+                                            <p class="text-xs text-gray-500 mt-0.5">Pengingat H-30, H-7, dan H-3 sebelum pajak jatuh tempo.</p>
                                         </div>
+                                    </div>
+
+                                    <!-- Feature 3 -->
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-gray-800">Data Aman Terenkripsi</h4>
+                                            <p class="text-xs text-gray-500 mt-0.5">Keamanan berlapis melindungi informasi pribadi Anda.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Feature 4 -->
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 bg-orange-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-sm font-semibold text-gray-800">Gratis Selamanya</h4>
+                                            <p class="text-xs text-gray-500 mt-0.5">Semua fitur dapat diakses tanpa biaya sepeser pun.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- CTA Mini -->
+                                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-3 text-center mt-2">
+                                        <p class="text-sm font-bold text-indigo-700">🚀 Bebas Denda, Bebas Khawatir!</p>
+                                        <p class="text-xs text-indigo-500 mt-0.5">10.000+ pengguna sudah merasakan manfaatnya</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Floating Card 2 -->
-                            <div class="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20" style="animation-delay: 2s;">
+                            <!-- Floating Card 2 - Statistik -->
+                            <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20" style="animation-delay: 2s;">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-                                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                    <div class="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                                         </svg>
                                     </div>
                                     <div>
-                                        <div class="text-sm font-semibold text-gray-800">Pengingat Aktif</div>
-                                        <div class="text-xs text-gray-500">Notifikasi H-30</div>
+                                        <div class="text-sm font-semibold text-gray-800">99% Tepat Waktu</div>
+                                        <div class="text-xs text-gray-500">Bebas denda pajak</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <!-- Stats Bar -->
                 <div class="max-w-7xl mx-auto mt-20">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -170,7 +195,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </div>
 

@@ -286,7 +286,7 @@
 
                                 <!-- Action Buttons -->
                                 <div class="grid grid-cols-2 gap-2">
-                                    <a href="{{ route('reminder.index') }}" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white py-2.5 px-3 rounded-xl font-medium text-sm hover:from-indigo-700 hover:to-blue-700 transition-all duration-200">
+                                    <a href="{{ route('reminder.index') }}" class="inline-flex items-center justify-center gap-2 bg-[#4f46e5] text-white py-2.5 px-3 rounded-xl font-medium text-sm hover:from-indigo-700 hover:to-blue-700 transition-all duration-200">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                                         </svg>
@@ -433,7 +433,7 @@
                                             </svg>
                                             Bayar Pajak
                                         </a>
-                                        <a href="{{ route('reminder.index') }}" class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white py-3 px-4 rounded-xl font-medium hover:from-indigo-700 hover:to-blue-700 transition-all">
+                                        <a href="{{ route('reminder.index') }}" class="flex-1 inline-flex items-center justify-center gap-2 bg-[#4f46e5] text-white py-3 px-4 rounded-xl font-medium hover:from-indigo-700 hover:to-blue-700 transition-all">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                                             </svg>
@@ -487,7 +487,7 @@
                         </div>
                         <div class="flex gap-3">
                             <button type="button" onclick="closeUpdateNikModal()" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200">Batal</button>
-                            <button type="submit" class="flex-1 px-4 py-3 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white rounded-xl font-medium hover:from-[#3730a3] hover:to-[#1d4ed8]">Update</button>
+                            <button type="submit" class="flex-1 px-4 py-3 bg-[#4f46e5] text-white rounded-xl font-medium hover:from-[#3730a3] hover:to-[#1d4ed8]">Update</button>
                         </div>
                     </form>
                 </div>
@@ -525,7 +525,7 @@
                         </div>
                         <div class="flex gap-3">
                             <button type="button" onclick="closeNewNikModal()" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200">Batal</button>
-                            <button type="submit" class="flex-1 px-4 py-3 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white rounded-xl font-medium hover:from-[#3730a3] hover:to-[#1d4ed8]">Cek NIK Baru</button>
+                            <button type="submit" class="flex-1 px-4 py-3 bg-[#4f46e5] text-white rounded-xl font-medium hover:from-[#3730a3] hover:to-[#1d4ed8]">Cek NIK Baru</button>
                         </div>
                     </form>
                 </div>

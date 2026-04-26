@@ -46,7 +46,7 @@
 
                         <!-- CTA Buttons -->
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <a href="{{ route('tax-check.index') }}" class="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#2563eb] to-[#4f46e5] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                            <a href="{{ route('tax-check.index') }}" class="group inline-flex items-center justify-center gap-3 bg-[#4f46e5] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:[#2563eb] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
                                 <svg class="w-6 h-6 group-hover:animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                 </svg>
@@ -291,7 +291,7 @@
 
             <!-- Bottom CTA -->
             <div class="text-center mt-16">
-                <a href="{{ route('tax-check.index') }}" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#2563eb] to-[#4f46e5] text-white px-10 py-4 rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300">
+                <a href="{{ route('tax-check.index') }}" class="inline-flex items-center gap-2 bg-[#4f46e5] text-white px-10 py-4 rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300">
                     Mulai Cek Pajak Sekarang
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>

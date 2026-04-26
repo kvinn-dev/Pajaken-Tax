@@ -483,7 +483,6 @@
                     <form action="{{ route('verify.nik') }}" method="POST" class="space-y-4">
                         @csrf
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">NIK Baru</label>
                             <input type="text" name="nik" maxlength="16" required placeholder="Masukkan 16 digit NIK" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent text-center text-md tracking-widest">
                         </div>
                         <div class="flex gap-3">
@@ -514,7 +513,6 @@
                     <form action="{{ route('verify.nik') }}" method="POST" class="space-y-4">
                         @csrf
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">NIK Baru</label>
                             <input type="text" name="nik" maxlength="16" required placeholder="Masukkan 16 digit NIK baru" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent text-center text-md tracking-widest">
                         </div>
                         <div class="bg-amber-50 border border-amber-200 rounded-xl p-3">

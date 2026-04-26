@@ -69,7 +69,7 @@
                         <!-- Main Illustration Card -->
                         <div class="relative z-10">
                             <!-- Floating Card 1 - Fitur -->
-                            <div class="absolute -top-10 -left-10 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20">
+                            <div class="absolute -top-12 -left-10 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20">
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
                                         <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -158,7 +158,7 @@
                             </div>
 
                             <!-- Floating Card 2 - Statistik -->
-                            <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20" style="animation-delay: 2s;">
+                            <div class="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20" style="animation-delay: 2s;">
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center">
                                         <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

@@ -941,6 +941,31 @@ body {
     position: relative;
 }
 
+/* Pastikan semua modal muncul di atas navbar */
+#updateNikModal,
+#newNikModal,
+#resetNikModal,
+[id^="vehicle-"] {
+    z-index: 2000 !important;
+}
+
+/* Backdrop overlay */
+#updateNikModal .fixed.inset-0.bg-gray-500,
+#newNikModal .fixed.inset-0.bg-gray-500,
+#resetNikModal .fixed.inset-0.bg-gray-500,
+[id^="vehicle-"] .fixed.inset-0.bg-gray-500 {
+    z-index: 1999 !important;
+}
+
+/* Konten modal */
+#updateNikModal .relative.inline-block,
+#newNikModal .relative.inline-block,
+#resetNikModal .relative.inline-block,
+[id^="vehicle-"] .relative.inline-block {
+    z-index: 2001 !important;
+}
+
+
 @media (max-width: 1024px) {
     .rm-layout {
         flex-direction: column;

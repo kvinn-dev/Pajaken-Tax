@@ -13,6 +13,7 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         $vehicles = collect();
+        $nikRecord = null;
 
         // Ambil kendaraan jika NIK sudah terisi dan valid
         if ($user->nik) {
@@ -22,13 +23,14 @@ class DashboardController extends Controller
             }
         }
 
-        return view('dashboard.index', compact('vehicles'));
+        return view('dashboard.index', compact('vehicles', 'nikRecord'));
     }
 
     public function taxCheck()
     {
         $user = Auth::user();
         $vehicles = collect();
+        $nikRecord = null;
 
         // Ambil kendaraan jika NIK sudah terisi dan valid
         if ($user->nik) {
@@ -38,7 +40,7 @@ class DashboardController extends Controller
             }
         }
 
-        return view('tax-check.index', compact('vehicles'));
+        return view('tax-check.index', compact('vehicles', 'nikRecord'));
     }
 
     public function about()

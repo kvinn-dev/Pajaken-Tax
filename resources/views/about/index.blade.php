@@ -115,7 +115,7 @@
                     <!-- Stats Mini -->
                     <div class="grid grid-cols-3 gap-4 pt-4">
                         <div class="text-center p-4 bg-indigo-50 rounded-2xl">
-                            <div class="text-2xl font-bold text-[#4f46e5]">2024</div>
+                            <div class="text-2xl font-bold text-[#4f46e5]">2026</div>
                             <div class="text-xs text-gray-500">Berdiri</div>
                         </div>
                         <div class="text-center p-4 bg-indigo-50 rounded-2xl">

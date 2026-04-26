@@ -16,14 +16,14 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Header -->
                 <div class="text-center mb-12">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100/80 backdrop-blur-sm rounded-full text-blue-700 text-sm font-medium mb-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100/80 backdrop-blur-sm rounded-full text-indigo-700 text-sm font-medium mb-4">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         Layanan Pajaken
                     </div>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
-                        Cek Pajak <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Kendaraan</span>
+                        Cek Pajak <span class="bg-gradient-to-r from-[#4f46e5] to-[#2563eb] bg-clip-text text-transparent">Kendaraan</span>
                     </h2>
                     <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Pantau status pajak kendaraan Anda secara real-time dengan mudah dan cepat</p>
                 </div>
@@ -65,7 +65,7 @@
                 <!-- Form Verifikasi NIK (Pertama Kali) -->
                 <div class="max-w-2xl mx-auto">
                     <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-                        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-8 text-white text-center">
+                        <div class="bg-gradient-to-r from-[#2563eb] to-[#4f46e5] px-8 py-8 text-white text-center">
                             <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
                                 <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"></path>
@@ -92,11 +92,11 @@
                                             maxlength="16"
                                             required
                                             placeholder="Masukkan 16 digit NIK Anda"
-                                            class="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400 bg-gray-50/50 text-lg tracking-widest font-mono text-center">
+                                            class="w-full pl-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400 bg-gray-50/50 text-md tracking-widest text-center">
                                     </div>
                                 </div>
 
-                                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-200 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                                <button type="submit" class="w-full bg-gradient-to-r from-[#2563eb] to-[#4f46e5] text-white py-4 px-6 rounded-xl font-semibold hover:from-[#1d4ed8] hover:to-[#3730a3] focus:ring-4 focus:ring-[#c7d2fe] transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                     </svg>
@@ -105,20 +105,20 @@
                             </form>
 
                             <div class="grid grid-cols-3 gap-4 mt-8">
-                                <div class="text-center p-4 bg-blue-50 rounded-xl">
-                                    <svg class="w-6 h-6 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <div class="text-center p-4 bg-indigo-50 rounded-xl">
+                                    <svg class="w-6 h-6 text-[#4f46e5] mx-auto mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                     </svg>
                                     <p class="text-xs font-medium text-gray-700">Proses Cepat</p>
                                 </div>
-                                <div class="text-center p-4 bg-green-50 rounded-xl">
-                                    <svg class="w-6 h-6 text-green-600 mx-auto mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <div class="text-center p-4 bg-indigo-50 rounded-xl">
+                                    <svg class="w-6 h-6 text-[#4f46e5] mx-auto mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                                     </svg>
                                     <p class="text-xs font-medium text-gray-700">Data Aman</p>
                                 </div>
-                                <div class="text-center p-4 bg-purple-50 rounded-xl">
-                                    <svg class="w-6 h-6 text-purple-600 mx-auto mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <div class="text-center p-4 bg-indigo-50 rounded-xl">
+                                    <svg class="w-6 h-6 text-[#4f46e5] mx-auto mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                     <p class="text-xs font-medium text-gray-700">Akurat</p>
@@ -135,38 +135,38 @@
                         <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
-                                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0"></path>
                                     </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm text-gray-500">NIK Terverifikasi</p>
-                                    <p class="text-xl font-bold text-gray-900 font-mono">{{ substr(Auth::user()->nik, 0, 4) }}<span class="text-gray-300">••••••••</span>{{ substr(Auth::user()->nik, -4) }}</p>
+                                    <p class="text-xl font-semibold text-gray-900">{{ substr(Auth::user()->nik, 0, 4) }}<span class="text-gray-400">********</span>{{ substr(Auth::user()->nik, -4) }}</p>
                                 </div>
                                 <div class="ml-4 pl-4 border-l border-gray-200">
                                     <p class="text-sm text-gray-500">Total Kendaraan</p>
-                                    <p class="text-xl font-bold text-indigo-600">{{ $vehicles->count() }} <span class="text-sm font-normal text-gray-500">Unit</span></p>
+                                    <p class="text-xl font-bold text-[#4f46e5]">{{ $vehicles->count() }} <span class="text-sm font-normal text-gray-500">Unit</span></p>
                                 </div>
                             </div>
 
                             <div class="flex flex-wrap gap-3">
-                                <button onclick="openUpdateNikModal()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-50 text-blue-700 rounded-xl font-medium text-sm hover:bg-blue-100 transition-all duration-200 border border-blue-200">
+                                <button onclick="openUpdateNikModal()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-[#4f46e5] rounded-xl font-medium text-sm hover:bg-indigo-100 transition-all duration-200 border border-indigo-200">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                                     </svg>
                                     Update NIK
                                 </button>
 
-                                <button onclick="openNewNikModal()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-indigo-700 rounded-xl font-medium text-sm hover:bg-indigo-100 transition-all duration-200 border border-indigo-200">
+                                <button onclick="openNewNikModal()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-50 text-[#4f46e5] rounded-xl font-medium text-sm hover:bg-indigo-100 transition-all duration-200 border border-indigo-200">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                     </svg>
                                     Cek NIK Baru
                                 </button>
 
-                                <form action="{{ route('reset.nik') }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin mereset data NIK? Semua data kendaraan akan dihapus.')">
+                                <form id="resetNikForm" action="{{ route('reset.nik') }}" method="POST">
                                     @csrf
-                                    <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 bg-red-50 text-red-700 rounded-xl font-medium text-sm hover:bg-red-100 transition-all duration-200 border border-red-200">
+                                    <button type="button" onclick="openResetModal()" class="inline-flex items-center gap-2 px-5 py-2.5 bg-red-50 text-red-700 rounded-xl font-medium text-sm hover:bg-red-100 transition-all duration-200 border border-red-200">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                         </svg>
@@ -179,8 +179,6 @@
                 </div>
 
                 <!-- Modals Update & Cek NIK Baru -->
-                <!-- [Modal Update NIK - sama seperti sebelumnya] -->
-                <!-- [Modal Cek NIK Baru - sama seperti sebelumnya] -->
 
                 @if($vehicles->isEmpty())
                 <!-- Empty State -->
@@ -235,10 +233,14 @@
                             <div class="p-6 pt-5">
                                 <!-- Header -->
                                 <div class="flex justify-between items-start mb-6">
-                                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl {{ strtolower($vehicle->jenis) == 'mobil' ? 'bg-blue-50' : 'bg-orange-50' }}">
-                                        {{ strtolower($vehicle->jenis) == 'mobil' ? '🚗' : '🏍️' }}
+                                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center {{ strtolower($vehicle->jenis) == 'mobil' ? 'bg-indigo-50' : 'bg-blue-50' }}">
+                                        @if(strtolower($vehicle->jenis) == 'mobil')
+                                        <img width="32" height="32" src="https://img.icons8.com/ios-glyphs/50/4f46e5/car.png" alt="car" />
+                                        @else
+                                        <img width="32" height="32" src="https://img.icons8.com/glyph-neue/50/4f46e5/motorcycle.png" alt="motorcycle" />
+                                        @endif
                                     </div>
-                                    <span class="px-3 py-1.5 {{ $statusBg }} {{ $statusTextColor }} rounded-full text-xs font-bold uppercase tracking-wider border {{ $statusBorder }}">
+                                    <span class="px-3 py-1 {{ $statusBg }} {{ $statusTextColor }} rounded-full text-xs font-medium tracking-wider border {{ $statusBorder }}">
                                         {{ $statusText }}
                                     </span>
                                 </div>
@@ -246,7 +248,7 @@
                                 <!-- Vehicle Info -->
                                 <div class="mb-6">
                                     <p class="text-xs text-gray-500 font-medium uppercase tracking-wider">{{ ucfirst($vehicle->jenis) }}</p>
-                                    <h3 class="text-2xl font-bold text-gray-900 font-mono mt-1">{{ $vehicle->no_polisi }}</h3>
+                                    <h3 class="text-2xl font-bold text-gray-900 mt-1">{{ $vehicle->no_polisi }}</h3>
                                     @if(isset($vehicle->merk))
                                     <p class="text-sm text-gray-500 mt-1">{{ $vehicle->merk }} {{ $vehicle->tipe ?? '' }}</p>
                                     @endif
@@ -268,14 +270,14 @@
                                         <svg class="w-4 h-4 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
-                                        <p class="text-sm font-semibold text-red-600">Terlambat {{ abs(intval($daysLeft)) }} hari</p>
+                                        <p class="text-sm font-medium text-red-600">Terlambat {{ abs(intval($daysLeft)) }} hari</p>
                                     </div>
                                     @else
                                     <div class="flex items-center gap-2 mt-3 bg-blue-50 rounded-lg px-3 py-2">
                                         <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
-                                        <p class="text-sm font-semibold {{ $daysLeft <= 30 ? 'text-yellow-600' : 'text-blue-600' }}">
+                                        <p class="text-sm font-medium {{ $daysLeft <= 30 ? 'text-yellow-600' : 'text-blue-600' }}">
                                             Tersisa {{ intval($daysLeft) }} hari
                                         </p>
                                     </div>
@@ -284,7 +286,7 @@
 
                                 <!-- Action Buttons -->
                                 <div class="grid grid-cols-2 gap-2">
-                                    <a href="{{ route('reminder.index') }}" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-2.5 px-3 rounded-xl font-medium text-sm hover:from-indigo-700 hover:to-blue-700 transition-all duration-200">
+                                    <a href="{{ route('reminder.index') }}" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white py-2.5 px-3 rounded-xl font-medium text-sm hover:from-indigo-700 hover:to-blue-700 transition-all duration-200">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                                         </svg>
@@ -306,11 +308,15 @@
                                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" onclick="closeVehicleDetail('{{ $vehicleId }}')"></div>
                                 <div class="relative inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
                                     <!-- Modal Header -->
-                                    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-6 sm:px-8 sm:py-6">
+                                    <div class="bg-gradient-to-r from-[#4f46e5] to-[#2563eb] px-6 py-6 sm:px-8 sm:py-6">
                                         <div class="flex items-center justify-between">
                                             <div class="flex items-center gap-3">
-                                                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-2xl">
-                                                    {{ strtolower($vehicle->jenis) == 'mobil' ? '🚗' : '🏍️' }}
+                                                <div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                                    @if(strtolower($vehicle->jenis) == 'mobil')
+                                                    <img width="28" height="28" src="https://img.icons8.com/ios-glyphs/50/ffffff/car.png" alt="car" />
+                                                    @else
+                                                    <img width="28" height="28" src="https://img.icons8.com/glyph-neue/50/ffffff/motorcycle.png" alt="motorcycle" />
+                                                    @endif
                                                 </div>
                                                 <div class="text-white">
                                                     <h3 class="text-xl font-bold">Detail Kendaraan</h3>
@@ -329,7 +335,7 @@
                                     <div class="px-6 py-6 sm:px-8 sm:py-8">
                                         <!-- Status Badge -->
                                         <div class="flex justify-end mb-6">
-                                            <span class="px-4 py-2 {{ $statusBg }} {{ $statusTextColor }} rounded-full text-sm font-bold uppercase tracking-wider border {{ $statusBorder }}">
+                                            <span class="px-4 py-1 {{ $statusBg }} {{ $statusTextColor }} rounded-full text-sm font-medium tracking-wider border {{ $statusBorder }}">
                                                 {{ $statusText }}
                                             </span>
                                         </div>
@@ -339,25 +345,25 @@
                                             <!-- Pemilik -->
                                             <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
                                                 <p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Nama Pemilik</p>
-                                                <p class="text-base font-semibold text-gray-900">{{ $vehicle->nama_pemilik ?? Auth::user()->name }}</p>
+                                                <p class="text-base font-semibold text-gray-900">{{ $nikRecord ? $nikRecord->nama : '-' }}</p>
                                             </div>
 
                                             <!-- No Polisi -->
                                             <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
                                                 <p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Nomor Polisi</p>
-                                                <p class="text-base font-semibold text-gray-900 font-mono">{{ $vehicle->no_polisi }}</p>
+                                                <p class="text-base font-semibold text-gray-900">{{ $vehicle->no_polisi }}</p>
                                             </div>
 
                                             <!-- No Mesin -->
                                             <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
                                                 <p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Nomor Mesin</p>
-                                                <p class="text-base font-semibold text-gray-900 font-mono">{{ $vehicle->no_mesin ?? '-' }}</p>
+                                                <p class="text-base font-semibold text-gray-900">{{ $vehicle->no_mesin ?? '-' }}</p>
                                             </div>
 
                                             <!-- No Rangka -->
                                             <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
                                                 <p class="text-xs text-gray-400 font-medium uppercase tracking-wider mb-1">Nomor Rangka</p>
-                                                <p class="text-base font-semibold text-gray-900 font-mono">{{ $vehicle->no_rangka ?? '-' }}</p>
+                                                <p class="text-base font-semibold text-gray-900">{{ $vehicle->no_rangka ?? '-' }}</p>
                                             </div>
 
                                             <!-- Warna -->
@@ -427,7 +433,7 @@
                                             </svg>
                                             Bayar Pajak
                                         </a>
-                                        <a href="{{ route('reminder.index') }}" class="flex-1 inline-flex items-center justify-center gap-2 bg-indigo-600 text-white py-3 px-4 rounded-xl font-medium hover:bg-indigo-700 transition-all">
+                                        <a href="{{ route('reminder.index') }}" class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white py-3 px-4 rounded-xl font-medium hover:from-indigo-700 hover:to-blue-700 transition-all">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                                             </svg>
@@ -445,7 +451,7 @@
 
                 <!-- Bottom Info -->
                 <div class="mt-12 text-center">
-                    <div class="inline-flex items-center gap-2 px-6 py-3 bg-blue-50 rounded-full text-blue-700 text-sm">
+                    <div class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-50 rounded-full text-[#4f46e5] text-sm">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
@@ -466,8 +472,8 @@
             <div class="relative inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                 <div class="bg-white px-6 pt-8 pb-6 sm:p-8">
                     <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                             </svg>
                         </div>
@@ -478,11 +484,11 @@
                         @csrf
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">NIK Baru</label>
-                            <input type="text" name="nik" maxlength="16" required placeholder="Masukkan 16 digit NIK" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-center text-lg tracking-widest font-mono">
+                            <input type="text" name="nik" maxlength="16" required placeholder="Masukkan 16 digit NIK" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent text-center text-md tracking-widest">
                         </div>
                         <div class="flex gap-3">
                             <button type="button" onclick="closeUpdateNikModal()" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200">Batal</button>
-                            <button type="submit" class="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-medium hover:from-blue-700 hover:to-indigo-700">Update</button>
+                            <button type="submit" class="flex-1 px-4 py-3 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white rounded-xl font-medium hover:from-[#3730a3] hover:to-[#1d4ed8]">Update</button>
                         </div>
                     </form>
                 </div>
@@ -498,7 +504,7 @@
                 <div class="bg-white px-6 pt-8 pb-6 sm:p-8">
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <svg class="w-8 h-8 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
@@ -509,7 +515,7 @@
                         @csrf
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">NIK Baru</label>
-                            <input type="text" name="nik" maxlength="16" required placeholder="Masukkan 16 digit NIK baru" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-center text-lg tracking-widest font-mono">
+                            <input type="text" name="nik" maxlength="16" required placeholder="Masukkan 16 digit NIK baru" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent text-center text-md tracking-widest">
                         </div>
                         <div class="bg-amber-50 border border-amber-200 rounded-xl p-3">
                             <div class="flex items-start gap-2">
@@ -521,9 +527,34 @@
                         </div>
                         <div class="flex gap-3">
                             <button type="button" onclick="closeNewNikModal()" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200">Batal</button>
-                            <button type="submit" class="flex-1 px-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-medium hover:from-indigo-700 hover:to-purple-700">Cek NIK Baru</button>
+                            <button type="submit" class="flex-1 px-4 py-3 bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white rounded-xl font-medium hover:from-[#3730a3] hover:to-[#1d4ed8]">Cek NIK Baru</button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Reset NIK -->
+    <div id="resetNikModal" class="fixed inset-0 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" onclick="closeResetModal()"></div>
+            <div class="relative inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-6 pt-8 pb-6 sm:p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Konfirmasi Reset</h3>
+                        <p class="text-sm text-gray-500 mt-2">Apakah Anda yakin ingin mereset data NIK? Semua data kendaraan akan dilepas dari tampilan akun Anda.</p>
+                    </div>
+                    
+                    <div class="flex gap-3">
+                        <button type="button" onclick="closeResetModal()" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200 transition-colors">Batal</button>
+                        <button type="button" onclick="document.getElementById('resetNikForm').submit()" class="flex-1 px-4 py-3 bg-gradient-to-r from-red-600 to-rose-600 text-white rounded-xl font-medium hover:from-red-700 hover:to-rose-700 transition-colors shadow-lg shadow-red-500/30">Ya, Reset Data</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -547,6 +578,14 @@
             document.getElementById('newNikModal').classList.add('hidden');
         }
 
+        function openResetModal() {
+            document.getElementById('resetNikModal').classList.remove('hidden');
+        }
+
+        function closeResetModal() {
+            document.getElementById('resetNikModal').classList.add('hidden');
+        }
+
         function openVehicleDetail(id) {
             document.getElementById(id).classList.remove('hidden');
         }
@@ -560,6 +599,7 @@
             if (e.key === 'Escape') {
                 closeUpdateNikModal();
                 closeNewNikModal();
+                closeResetModal();
                 document.querySelectorAll('[id^="vehicle-"]').forEach(el => {
                     if (!el.classList.contains('hidden')) {
                         el.classList.add('hidden');

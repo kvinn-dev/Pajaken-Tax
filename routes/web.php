@@ -1,9 +1,11 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminVehicleController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ReminderController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReminderController;
 
 Route::redirect('/', '/login');
 
@@ -34,9 +36,11 @@ Route::middleware(['auth'])->group(function () {
 
     // Admin Routes
     Route::middleware('role:admin')->prefix('admin')->group(function () {
-        Route::get('/', function() {
-            return "Admin Dashboard";
-        })->name('admin.dashboard');
+        Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
+        
+        Route::get('/vehicles', [AdminVehicleController::class, 'index'])->name('admin.vehicles.index');
+        Route::post('/vehicles', [AdminVehicleController::class, 'store'])->name('admin.vehicles.store');
+        Route::get('/notifications', function() { return "Halaman Push Notifikasi sedang dikembangkan."; })->name('admin.notifications.index');
     });
 });
 

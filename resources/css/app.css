@@ -1558,6 +1558,61 @@ body {
     font-weight: 500;
 }
 
+/* Admin Layout Fix */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    width: 280px;
+    min-width: 280px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    background: white;
+    border-right: 1px solid #f0f0f0;
+    z-index: 40;
+}
+
+.admin-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+    .admin-sidebar {
+        position: fixed;
+        left: -280px;
+        transition: left 0.3s ease;
+    }
+
+    .admin-sidebar.open {
+        left: 0;
+    }
+
+    .admin-main {
+        margin-left: 0;
+    }
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .notif-container {
@@ -1667,4 +1722,20 @@ body {
 }
 .animate-float-slow {
     animation: float-slow 4s ease-in-out infinite;
+}
+
+/* Subtle animation for overdue pulse */
+@keyframes softPulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.animate-pulse {
+    animation: softPulse 2s ease-in-out infinite;
 }

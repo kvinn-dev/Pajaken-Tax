@@ -228,7 +228,7 @@
 
                         <div class="group bg-white rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
                             <!-- Status Bar Top -->
-                            <div class="h-1.5 bg-gradient-to-r {{ $statusColor == 'red' ? 'from-red-500 to-red-400' : ($statusColor == 'yellow' ? 'from-yellow-500 to-yellow-400' : 'from-green-500 to-green-400') }}"></div>
+                            <div class="h-1.5 bg-gradient-to-r {{ $statusColor == 'red' ? 'from-red-500 to-red-400' : ($statusColor == 'amber' ? 'from-amber-500 to-amber-400' : 'from-green-500 to-green-400') }}"></div>
 
                             <div class="p-6 pt-5">
                                 <!-- Header -->
@@ -277,7 +277,7 @@
                                         <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
-                                        <p class="text-sm font-medium {{ $daysLeft <= 30 ? 'text-yellow-600' : 'text-blue-600' }}">
+                                        <p class="text-sm font-medium {{ $daysLeft <= 30 ? 'text-amber-600' : 'text-blue-600' }}">
                                             Tersisa {{ intval($daysLeft) }} hari
                                         </p>
                                     </div>

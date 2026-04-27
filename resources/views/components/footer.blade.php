@@ -9,22 +9,55 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-6 relative">
         <!-- Top CTA Banner -->
-        <div class="bg-gradient-to-r from-[#4f46e5] to-[#2563eb] rounded-2xl p-8 md:p-10 mb-16 text-white relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
-            <div class="absolute bottom-0 left-1/4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+        <div class="bg-gradient-to-r from-[#4f46e5] to-[#2563eb] rounded-2xl p-8 md:p-10 mb-16 text-white relative overflow-hidden group cursor-pointer">
+            <!-- Animated Background Shapes -->
+            <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/4 group-hover:scale-150 transition-transform duration-700 blur-2xl"></div>
+            <div class="absolute bottom-0 left-1/4 w-32 h-32 bg-white/10 rounded-full group-hover:scale-125 transition-transform duration-700 blur-xl"></div>
+            <div class="absolute top-1/2 right-1/3 w-20 h-20 bg-white/5 rounded-full blur-lg"></div>
 
             <div class="relative flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-2">Siap Bebas Denda Pajak?</h3>
-                    <p class="text-gray-100/60 text-sm md:text-base">Mulai kelola pajak kendaraan Anda sekarang, gratis selamanya!</p>
+                <div class="flex items-center gap-5">
+                    <!-- Animated Icon Container -->
+                    <div class="hidden sm:flex w-16 h-16 md:w-20 md:h-20 bg-white/20 backdrop-blur-sm rounded-2xl items-center justify-center flex-shrink-0 group-hover:bg-white/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg">
+                        <svg class="w-8 h-8 md:w-10 md:h-10 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-2 group-hover:translate-x-1 transition-transform duration-300">
+                            Siap Bebas Denda Pajak?
+                        </h3>
+                        <p class="text-indigo-100 text-sm md:text-base flex items-center gap-2">
+                            Mulai kelola pajak kendaraan Anda sekarang, gratis selamanya!
+                        </p>
+                    </div>
                 </div>
-                <a href="{{ route('tax-check.index') }}" class="inline-flex items-center gap-2 bg-white text-[#4f46e5] px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap">
-                    Cek Pajak Gratis
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </a>
+
+                <div class="flex items-center gap-3">
+                    <!-- Stats Mini -->
+                    <div class="hidden lg:flex items-center gap-4 text-white/80 text-sm border-r border-white/20 pr-4 mr-2">
+                        <div class="text-center">
+                            <div class="font-bold text-white">10K+</div>
+                            <div class="text-xs text-white/60">Pengguna</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-white">99%</div>
+                            <div class="text-xs text-white/60">Tepat Waktu</div>
+                        </div>
+                    </div>
+
+                    <a href="{{ route('tax-check.index') }}" class="inline-flex items-center gap-2 bg-white text-[#4f46e5] px-6 py-3 rounded-xl font-semibold hover:bg-indigo-50 transition-all duration-300 transform hover:scale-105 shadow-lg whitespace-nowrap group/btn" onclick="event.stopPropagation()">
+                        <span>Cek Pajak Gratis</span>
+                        <svg class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
+
+            <!-- Bottom Shine Effect -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">

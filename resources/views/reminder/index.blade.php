@@ -6,7 +6,7 @@
             <div class="rm-month-header">
                 <div class="rm-month-nav">
                     <button class="rm-nav-arrow" id="prevMonth">&lt;</button>
-                    <h2 id="currentMonthYear">April 2026</h2>
+                    <h2 id="currentMonthYear" class="font-semibold"></h2>
                     <button class="rm-nav-arrow" id="nextMonth">&gt;</button>
                 </div>
                 <div class="rm-search-filter">

@@ -124,7 +124,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Biru',
             'jenis' => 'motor',
             'bahan_bakar' => 'Bensin',
-            'tanggal_pajak' => '2024-03-12'
+            'tanggal_pajak' => '2026-06-12'
         ]);
 
         Vehicle::create([

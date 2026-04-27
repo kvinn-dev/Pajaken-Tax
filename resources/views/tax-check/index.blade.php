@@ -210,11 +210,11 @@
                     $statusBorder = 'border-red-200';
                     $statusTextColor = 'text-red-700';
                     } elseif ($daysLeft <= 30) {
-                        $statusColor='yellow' ;
+                        $statusColor='amber' ;
                         $statusText='Segera Bayar' ;
-                        $statusBg='bg-yellow-50' ;
-                        $statusBorder='border-yellow-200' ;
-                        $statusTextColor='text-yellow-700' ;
+                        $statusBg='bg-amber-50' ;
+                        $statusBorder='border-amber-200' ;
+                        $statusTextColor='text-amber-700' ;
                         } else {
                         $statusColor='green' ;
                         $statusText='Aktif' ;
@@ -548,7 +548,7 @@
                         <h3 class="text-xl font-bold text-gray-900">Konfirmasi Reset</h3>
                         <p class="text-sm text-gray-500 mt-2">Apakah Anda yakin ingin mereset data NIK? Semua data kendaraan akan dilepas dari tampilan akun Anda.</p>
                     </div>
-                    
+
                     <div class="flex gap-3">
                         <button type="button" onclick="closeResetModal()" class="flex-1 px-4 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200 transition-colors">Batal</button>
                         <button type="button" onclick="document.getElementById('resetNikForm').submit()" class="flex-1 px-4 py-3 bg-gradient-to-r from-red-600 to-rose-600 text-white rounded-xl font-medium hover:from-red-700 hover:to-rose-700 transition-colors shadow-lg shadow-red-500/30">Ya, Reset Data</button>

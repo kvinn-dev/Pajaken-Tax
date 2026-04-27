@@ -290,7 +290,7 @@
             </div>
 
             <!-- Bottom CTA -->
-            <div class="text-center mt-16">
+            <div class="text-center mt-16 mb-8">
                 <a href="{{ route('tax-check.index') }}" class="inline-flex items-center gap-2 bg-[#4f46e5] text-white px-10 py-4 rounded-2xl font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300">
                     Mulai Cek Pajak Sekarang
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -300,4 +300,6 @@
             </div>
         </div>
     </section>
+
+    <x-footer />
 </x-app-layout>

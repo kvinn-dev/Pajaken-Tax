@@ -24,7 +24,7 @@
                         Mengenal Lebih Dekat
                         <span class="bg-gradient-to-r from-[#4f46e5] to-[#2563eb] bg-clip-text text-transparent">Pajaken</span>
                     </h1>
-                    
+
                     <p class="text-xl text-gray-600 leading-relaxed">
                         Platform modern yang membantu Anda mengelola pajak kendaraan dengan mudah, cepat, dan bebas denda.
                     </p>
@@ -99,7 +99,7 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
                         Lahir dari Masalah yang Sering Dialami
                     </h2>
-                    
+
                     <div class="space-y-4 text-gray-600 leading-relaxed">
                         <p>
                             <strong class="text-gray-800">Pajaken</strong> berawal dari pengalaman pribadi tim kami yang sering terlambat membayar pajak kendaraan karena lupa tanggal jatuh tempo. Denda yang menumpuk dan proses pengecekan yang ribet menjadi motivasi kami untuk menciptakan solusi.
@@ -213,15 +213,21 @@
                         </p>
                         <ul class="space-y-2">
                             <li class="flex items-center gap-2 text-sm text-gray-500">
-                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
                                 Hasil pencarian instan
                             </li>
                             <li class="flex items-center gap-2 text-sm text-gray-500">
-                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
                                 Data akurat & terpercaya
                             </li>
                             <li class="flex items-center gap-2 text-sm text-gray-500">
-                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
                                 Riwayat pengecekan tersimpan
                             </li>
                         </ul>
@@ -257,11 +263,15 @@
                                 </div>
                                 <div class="space-y-2">
                                     <div class="flex items-center gap-2 text-xs text-emerald-600">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
                                         Pengingat 30 hari sebelum
                                     </div>
                                     <div class="flex items-center gap-2 text-xs text-emerald-600">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                        </svg>
                                         Pengingat 7 hari sebelum
                                     </div>
                                 </div>
@@ -276,11 +286,15 @@
                         </p>
                         <ul class="space-y-2">
                             <li class="flex items-center gap-2 text-sm text-gray-500">
-                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
                                 Notifikasi fleksibel (3/7/30 hari)
                             </li>
                             <li class="flex items-center gap-2 text-sm text-gray-500">
-                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
                                 Email & notifikasi in-app
                             </li>
                         </ul>
@@ -297,11 +311,15 @@
                         </p>
                         <ul class="space-y-2">
                             <li class="flex items-center gap-2 text-sm text-gray-500">
-                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
                                 Tambah banyak kendaraan
                             </li>
                             <li class="flex items-center gap-2 text-sm text-gray-500">
-                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
                                 Status terorganisir rapi
                             </li>
                         </ul>
@@ -338,7 +356,7 @@
             <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-200 rounded-full blur-3xl"></div>
         </div>
 
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
             <div class="text-center mb-16">
                 <span class="text-[#4f46e5] font-semibold text-sm uppercase tracking-wider">Tim Kami</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">Di Balik Layar Pajaken</h2>
@@ -353,7 +371,9 @@
                             <span class="text-3xl">👨‍💻</span>
                         </div>
                         <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-400 rounded-full border-2 border-white flex items-center justify-center">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                            </svg>
                         </div>
                     </div>
                     <h4 class="text-lg font-bold text-gray-900">John Doe</h4>
@@ -368,7 +388,9 @@
                             <span class="text-3xl">👩‍🎨</span>
                         </div>
                         <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-400 rounded-full border-2 border-white flex items-center justify-center">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                            </svg>
                         </div>
                     </div>
                     <h4 class="text-lg font-bold text-gray-900">John Doe</h4>
@@ -383,7 +405,9 @@
                             <span class="text-3xl">👨‍🔧</span>
                         </div>
                         <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-400 rounded-full border-2 border-white flex items-center justify-center">
-                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                            </svg>
                         </div>
                     </div>
                     <h4 class="text-lg font-bold text-gray-900">John Doe</h4>
@@ -394,31 +418,5 @@
         </div>
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="bg-gradient-to-r from-[#4f46e5] to-[#2563eb] rounded-3xl p-12 relative overflow-hidden">
-                <div class="absolute inset-0 opacity-10">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-2xl translate-x-1/3 -translate-y-1/3"></div>
-                </div>
-                
-                <div class="relative z-10">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                        Siap Mengelola Pajak Kendaraan?
-                    </h2>
-                    <p class="text-lg text-white/70 mb-8 max-w-2xl mx-auto">
-                        Bergabung dengan 10.000+ pengguna yang sudah merasakan kemudahan Pajaken. Mulai sekarang dan ucapkan selamat tinggal pada denda!
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="{{ route('tax-check.index') }}" class="inline-flex items-center justify-center gap-2 bg-white text-[#4f46e5] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg">
-                            Cek Pajak Sekarang
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <x-footer />
 </x-app-layout>

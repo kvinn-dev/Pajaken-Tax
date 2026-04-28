@@ -47,15 +47,12 @@
                         <!-- CTA Buttons -->
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <a href="{{ route('tax-check.index') }}" class="group inline-flex items-center justify-center gap-3 bg-[#4f46e5] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:[#2563eb] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
-                                <svg class="w-6 h-6 group-hover:animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
                                 Cek Pajak Sekarang
                                 <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
                             </a>
-                            <a href="{{ route('about.index') }}" class="inline-flex items-center justify-center gap-2 bg-white text-gray-700 px-8 py-4 rounded-2xl font-semibold border-2 border-gray-200 hover:border-[#4f46e5] hover:text-[#4f46e5] transition-all duration-300">
+                            <a href="{{ route('about.index') }}" class="inline-flex items-center justify-center gap-2 bg-white text-gray-700 px-8 py-4 rounded-2xl font-semibold border-2 border-gray-200 hover:border-[#4f46e5]/60 hover:text-[#4f46e5] transition-all duration-300">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
@@ -71,8 +68,8 @@
                             <!-- Floating Card 1 - Fitur -->
                             <div class="absolute -top-12 -left-10 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <div class="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center">
+                                        <svg class="w-5 h-5 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                                         </svg>
                                     </div>
@@ -151,7 +148,7 @@
 
                                     <!-- CTA Mini -->
                                     <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-3 text-center mt-2">
-                                        <p class="text-sm font-bold text-indigo-700">🚀 Bebas Denda, Bebas Khawatir!</p>
+                                        <p class="text-sm font-bold text-indigo-700">Bebas Denda, Bebas Khawatir!</p>
                                         <p class="text-xs text-indigo-500 mt-0.5">10.000+ pengguna sudah merasakan manfaatnya</p>
                                     </div>
                                 </div>
@@ -161,7 +158,7 @@
                             <div class="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-xl p-4 animate-float-slow z-20" style="animation-delay: 2s;">
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                                         </svg>
                                     </div>

@@ -19,14 +19,6 @@
             Kembali
         </a>
         <div class="nav-right">
-            <div class="nav-bell">
-                <svg width="24" height="24" fill="none" stroke="#4f46e5" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9zm-6 13a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
-                </svg>
-                @if($unreadCount ?? 0 > 0)
-                <div class="bell-dot"></div>
-                @endif
-            </div>
             <a href="{{ route('profile.edit') }}">
                 <div class="nav-avatar">
                     <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name ?? 'User') }}&background=f0ebff&color=6200ff" alt="profile" />

@@ -342,7 +342,6 @@ body {
 .dropdown-body {
     max-height: 380px;
     overflow-y: auto;
-    padding: 4px 8px;
 }
 
 /* Scrollbar styling */
@@ -364,8 +363,7 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    padding: 14px 12px;
-    border-radius: 12px;
+    padding: 8px 10px;
     cursor: pointer;
     transition: background 0.2s;
     position: relative;

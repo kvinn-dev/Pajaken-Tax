@@ -18,82 +18,77 @@
                 <div class="h-full w-full" style="background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 30px 30px;"></div>
             </div>
 
+            <!-- Logo - Pojok Kiri Atas -->
+            <div class="absolute top-8 left-10 lg:left-14 xl:left-8 z-10">
+                <img src="{{ asset('logo-letter-pajaken-white.svg') }}" alt="Logo Pajaken" class="h-14 w-auto" />
+            </div>
+
             <!-- Content -->
-            <div class="relative flex flex-col justify-center px-12 lg:px-20 w-full text-white">
-                <!-- Logo -->
-                <div class="mb-12">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                            </svg>
-                        </div>
-                        <span class="text-2xl font-bold tracking-tight">Pajaken</span>
-                    </div>
-                </div>
-
-                <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+            <div class="relative flex flex-col justify-center px-10 lg:px-14 xl:px-20 w-full h-full text-white">
+                <h1 class="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-4">
                     Kelola Pajak Kendaraan
-                    <span class="block text-white/80">Lebih Mudah & Cepat</span>
                 </h1>
+                <p class="text-xl lg:text-2xl text-white/70 mb-6">Lebih Mudah & Cepat</p>
 
-                <p class="text-lg text-white/70 leading-relaxed mb-10 max-w-md">
+                <p class="text-base text-white/60 leading-relaxed mb-8 max-w-sm">
                     Cek status, atur pengingat, dan bayar pajak kendaraan Anda tepat waktu. Bebas denda selamanya.
                 </p>
 
                 <!-- Features List -->
                 <div class="space-y-4 mb-10">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    <div class="flex items-center gap-3 group cursor-default">
+                        <div class="w-9 h-9 bg-white/10 group-hover:bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
                             </svg>
                         </div>
-                        <span class="text-white/80">Akses cepat & real-time</span>
+                        <span class="text-white/70 text-sm">Akses cepat & real-time</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="flex items-center gap-3 group cursor-default">
+                        <div class="w-9 h-9 bg-white/10 group-hover:bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                             </svg>
                         </div>
-                        <span class="text-white/80">Keamanan data terjamin</span>
+                        <span class="text-white/70 text-sm">Keamanan data terjamin</span>
                     </div>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
-                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <div class="flex items-center gap-3 group cursor-default">
+                        <div class="w-9 h-9 bg-white/10 group-hover:bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
                             </svg>
                         </div>
-                        <span class="text-white/80">Pengingat otomatis H-30</span>
+                        <span class="text-white/70 text-sm">Pengingat otomatis H-30</span>
                     </div>
                 </div>
 
                 <!-- Stats -->
-                <div class="flex gap-8">
-                    <div>
-                        <div class="text-3xl font-bold">10K+</div>
-                        <div class="text-sm text-white/60">Pengguna Aktif</div>
+                <div class="flex gap-6">
+                    <div class="text-center">
+                        <div class="text-2xl lg:text-3xl font-bold">10K+</div>
+                        <div class="text-xs text-white/40 mt-1">Pengguna</div>
                     </div>
-                    <div>
-                        <div class="text-3xl font-bold">50K+</div>
-                        <div class="text-sm text-white/60">Kendaraan</div>
+                    <div class="w-px bg-white/10"></div>
+                    <div class="text-center">
+                        <div class="text-2xl lg:text-3xl font-bold">50K+</div>
+                        <div class="text-xs text-white/40 mt-1">Kendaraan</div>
                     </div>
-                    <div>
-                        <div class="text-3xl font-bold">99%</div>
-                        <div class="text-sm text-white/60">Tepat Waktu</div>
+                    <div class="w-px bg-white/10"></div>
+                    <div class="text-center">
+                        <div class="text-2xl lg:text-3xl font-bold">99%</div>
+                        <div class="text-xs text-white/40 mt-1">Tepat Waktu</div>
                     </div>
                 </div>
 
                 <!-- Floating Elements -->
-                <div class="absolute bottom-20 right-20 w-24 h-24 bg-white/10 rounded-2xl backdrop-blur-sm flex items-center justify-center animate-float-slow">
-                    <svg class="w-10 h-10 text-white/60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                <div class="absolute bottom-16 right-16 w-16 h-16 bg-white/5 rounded-2xl backdrop-blur-sm flex items-center justify-center animate-float-slow pointer-events-none">
+                    <svg class="w-7 h-7 text-white/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <div class="absolute top-1/3 right-32 w-16 h-16 bg-white/10 rounded-xl backdrop-blur-sm flex items-center justify-center animate-float-slow" style="animation-delay: 2s;">
-                    <svg class="w-7 h-7 text-white/60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <div class="absolute top-1/3 right-24 w-12 h-12 bg-white/5 rounded-xl backdrop-blur-sm flex items-center justify-center animate-float-slow pointer-events-none" style="animation-delay: 1.5s;">
+                    <svg class="w-5 h-5 text-white/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>
             </div>

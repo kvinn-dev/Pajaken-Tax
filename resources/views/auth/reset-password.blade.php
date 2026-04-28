@@ -9,7 +9,7 @@
             <div class="absolute bottom-0 right-0 w-80 h-80 translate-x-1/3 translate-y-1/3">
                 <div class="w-full h-full bg-white/10 rounded-full blur-3xl"></div>
             </div>
-            <div class="absolute top-1/3 right-1/4 w-64 h-64">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64">
                 <div class="w-full h-full bg-white/5 rounded-full blur-2xl"></div>
             </div>
 
@@ -18,20 +18,13 @@
                 <div class="h-full w-full" style="background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 30px 30px;"></div>
             </div>
 
+            <!-- Logo - Pojok Kiri Atas -->
+            <div class="absolute top-8 left-10 lg:left-14 xl:left-8 z-10">
+                <img src="{{ asset('logo-letter-pajaken-white.svg') }}" alt="Logo Pajaken" class="h-14 w-auto" />
+            </div>
+
             <!-- Content -->
             <div class="relative flex flex-col justify-center px-12 lg:px-20 w-full text-white">
-                <!-- Logo -->
-                <div class="mb-12">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                            </svg>
-                        </div>
-                        <span class="text-2xl font-bold tracking-tight">Pajaken</span>
-                    </div>
-                </div>
-
                 <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
                     Buat Kata Sandi
                     <span class="block text-white/80">Baru yang Lebih Kuat</span>

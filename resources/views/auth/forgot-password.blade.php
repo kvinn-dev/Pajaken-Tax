@@ -18,25 +18,18 @@
                 <div class="h-full w-full" style="background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 30px 30px;"></div>
             </div>
 
+            <!-- Logo - Pojok Kiri Atas -->
+            <div class="absolute top-8 left-10 lg:left-14 xl:left-8 z-10">
+                <img src="{{ asset('logo-letter-pajaken-white.svg') }}" alt="Logo Pajaken" class="h-14 w-auto" />
+            </div>
+
             <!-- Content -->
             <div class="relative flex flex-col justify-center px-12 lg:px-20 w-full text-white">
-                <!-- Logo -->
-                <div class="mb-12">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                            </svg>
-                        </div>
-                        <span class="text-2xl font-bold tracking-tight">Pajaken</span>
-                    </div>
-                </div>
-
                 <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
                     Lupa Kata Sandi?
                     <span class="block text-white/80">Tenang, Kami Bantu</span>
                 </h1>
-                
+
                 <p class="text-lg text-white/70 leading-relaxed mb-10 max-w-md">
                     Jangan khawatir! Masukkan email Anda dan kami akan mengirimkan link untuk mengatur ulang kata sandi Anda.
                 </p>
@@ -125,17 +118,16 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                 </svg>
                             </div>
-                            <input 
-                                id="email" 
-                                type="email" 
-                                name="email" 
-                                value="{{ old('email') }}" 
-                                required 
-                                autofocus 
+                            <input
+                                id="email"
+                                type="email"
+                                name="email"
+                                value="{{ old('email') }}"
+                                required
+                                autofocus
                                 autocomplete="email"
                                 placeholder="Masukkan alamat email"
-                                class="block w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400 bg-gray-50/50 hover:bg-gray-50"
-                            >
+                                class="block w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400 bg-gray-50/50 hover:bg-gray-50">
                         </div>
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>

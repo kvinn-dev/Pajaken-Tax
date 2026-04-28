@@ -3,16 +3,24 @@
         <!-- LEFT SIDE - ILLUSTRATION -->
         <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-[#4f46e5] via-[#2563eb] to-[#7c3aed]">
             <!-- Decorative Shapes -->
-            <div class="absolute top-0 right-0 w-96 h-96 translate-x-1/3 -translate-y-1/3">
+            <div class="absolute top-0 left-0 w-96 h-96 -translate-x-1/2 -translate-y-1/2">
                 <div class="w-full h-full bg-white/10 rounded-full blur-3xl"></div>
             </div>
-            <div class="absolute bottom-0 left-0 w-80 h-80 -translate-x-1/3 translate-y-1/3">
+            <div class="absolute bottom-0 right-0 w-80 h-80 translate-x-1/3 translate-y-1/3">
                 <div class="w-full h-full bg-white/10 rounded-full blur-3xl"></div>
+            </div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64">
+                <div class="w-full h-full bg-white/5 rounded-full blur-2xl"></div>
             </div>
 
             <!-- Grid Pattern Overlay -->
             <div class="absolute inset-0 opacity-10">
                 <div class="h-full w-full" style="background-image: radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 30px 30px;"></div>
+            </div>
+
+            <!-- Logo - Pojok Kiri Atas -->
+            <div class="absolute top-8 left-10 lg:left-14 xl:left-8 z-10">
+                <img src="{{ asset('logo-letter-pajaken-white.svg') }}" alt="Logo Pajaken" class="h-14 w-auto" />
             </div>
 
             <!-- Content -->

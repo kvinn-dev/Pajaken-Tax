@@ -81,13 +81,13 @@
                 </div>
 
                 <!-- Floating Elements -->
-                <div class="absolute bottom-16 right-16 w-16 h-16 bg-white/5 rounded-2xl backdrop-blur-sm flex items-center justify-center animate-float-slow pointer-events-none">
-                    <svg class="w-7 h-7 text-white/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <div class="absolute bottom-16 right-16 w-16 h-16 bg-white/10 rounded-2xl backdrop-blur-sm flex items-center justify-center animate-float-slow pointer-events-none">
+                    <svg class="w-7 h-7 text-white/60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <div class="absolute top-1/3 right-24 w-12 h-12 bg-white/5 rounded-xl backdrop-blur-sm flex items-center justify-center animate-float-slow pointer-events-none" style="animation-delay: 1.5s;">
-                    <svg class="w-5 h-5 text-white/30" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <div class="absolute top-1/3 right-24 w-12 h-12 bg-white/10 rounded-xl backdrop-blur-sm flex items-center justify-center animate-float-slow pointer-events-none" style="animation-delay: 1.5s;">
+                    <svg class="w-5 h-5 text-white/60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>

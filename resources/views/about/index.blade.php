@@ -25,7 +25,7 @@
                         <span class="bg-gradient-to-r from-[#4f46e5] to-[#2563eb] bg-clip-text text-transparent">Pajaken</span>
                     </h1>
 
-                    <p class="text-xl text-gray-600 leading-relaxed">
+                    <p class="text-lg text-gray-600 leading-relaxed">
                         Platform modern yang membantu Anda mengelola pajak kendaraan dengan mudah, cepat, dan bebas denda.
                     </p>
                 </div>

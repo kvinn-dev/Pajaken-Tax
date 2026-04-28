@@ -25,7 +25,7 @@
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
                         Cek Pajak <span class="bg-gradient-to-r from-[#4f46e5] to-[#2563eb] bg-clip-text text-transparent">Kendaraan</span>
                     </h2>
-                    <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Pantau status pajak kendaraan Anda secara real-time dengan mudah dan cepat</p>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Pantau status pajak kendaraan Anda secara real-time dengan mudah dan cepat</p>
                 </div>
 
                 <!-- Alert Messages -->

@@ -213,7 +213,7 @@
                             <div class="w-full border-t border-gray-200"></div>
                         </div>
                         <div class="relative flex justify-center text-sm">
-                            <span class="px-4 bg-white text-gray-400">atau masuk dengan email</span>
+                            <span class="px-4 bg-white text-gray-400">atau masuk dengan</span>
                         </div>
                     </div>
 

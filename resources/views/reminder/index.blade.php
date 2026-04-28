@@ -79,7 +79,7 @@
                 <div class="rm-form-group">
                     <label class="rm-label">Tipe Kendaraan</label>
                     <div class="rm-toggle-row" id="vehicleTypeToggle">
-                        <button type="button" class="rm-toggle-btn active" data-type="motor" id="btnMotor">
+                        <button type="button" class="rm-toggle-btn" data-type="motor" id="btnMotor">
                             <img width="20" height="20" src="https://img.icons8.com/glyph-neue/50/4f46e5/motorcycle.png" alt="motor" />
                             Motor
                         </button>
@@ -88,7 +88,7 @@
                             Mobil
                         </button>
                     </div>
-                    <input type="hidden" name="vehicle_type" id="vehicleTypeInput" value="motor">
+                    <input type="hidden" name="vehicle_type" id="vehicleTypeInput" value="">
                 </div>
 
                 <div class="rm-form-group">
@@ -107,11 +107,11 @@
                 <div class="rm-form-group">
                     <label class="rm-label">Pengingat Sebelum Jatuh Tempo</label>
                     <div class="rm-toggle-row" id="reminderDaysToggle">
-                        <button type="button" class="rm-toggle-btn active" data-days="3">3 Hari</button>
+                        <button type="button" class="rm-toggle-btn" data-days="3">3 Hari</button>
                         <button type="button" class="rm-toggle-btn" data-days="7">7 Hari</button>
                         <button type="button" class="rm-toggle-btn" data-days="30">30 Hari</button>
                     </div>
-                    <input type="hidden" name="reminder_type" id="reminderDaysInput" value="3">
+                    <input type="hidden" name="reminder_type" id="reminderDaysInput" value="">
                 </div>
 
                 <!-- Mini Calendar -->
@@ -138,6 +138,26 @@
         </div>
     </div>
 
+    <!-- Modal for Event Details -->
+    <div id="eventDetailModal" class="rm-modal-overlay" style="display: none;">
+        <div class="rm-modal-content">
+            <div class="rm-modal-header">
+                <h3 id="modalTitle">Detail Pajak Kendaraan</h3>
+                <button id="modalCloseBtn" class="rm-modal-close">&times;</button>
+            </div>
+            <div class="rm-modal-body">
+                <p><strong>No. Polisi:</strong> <span id="modalNoPolisi"></span></p>
+                <p><strong>Jenis:</strong> <span id="modalJenis"></span></p>
+                <p><strong>Warna:</strong> <span id="modalWarna"></span></p>
+                <p><strong>Jatuh Tempo:</strong> <span id="modalTanggalPajak"></span></p>
+                <p><strong>Status:</strong> <span id="modalStatus" class="font-semibold"></span></p>
+            </div>
+            <div class="rm-modal-footer">
+                <a href="#" id="modalBayarBtn" class="rm-btn-submit" style="width: auto; text-decoration: none; margin-top: 0;">Bayar Pajak</a>
+            </div>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             function getLocalISODate(date) {
@@ -153,6 +173,8 @@
             let currentDate = new Date(today.getFullYear(), today.getMonth(), 1);
             let selectedDate = null;
             let reminders = @json($reminders ?? []);
+            let reminderEvents = [];
+            let activeReminderPreviewDate = null; // For mini calendar preview
 
             // DOM Elements
             const calendarGrid = document.getElementById('calendarGrid');
@@ -169,10 +191,123 @@
             const reminderDaysToggle = document.getElementById('reminderDaysToggle');
             const reminderDaysInput = document.getElementById('reminderDaysInput');
             const searchInput = document.getElementById('searchVehicle');
+            const eventDetailModal = document.getElementById('eventDetailModal');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
             const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
-            // Lock vehicle type buttons by default
-            unlockVehicleTypeButtons();
+            function processReminders() {
+                reminderEvents = [];
+                reminders.forEach(r => {
+                    if (!r.tanggal || !r.reminder_type) return;
+
+                    const dueDate = new Date(r.tanggal);
+                    dueDate.setHours(0, 0, 0, 0);
+
+                    // Ini adalah tanggal pengingat (untuk titik ungu)
+                    const reminderDate = new Date(dueDate);
+                    reminderDate.setDate(reminderDate.getDate() - parseInt(r.reminder_type, 10));
+                    const reminderDateStr = getLocalISODate(reminderDate);
+
+                    reminderEvents.push({
+                        date: reminderDateStr,
+                        type: 'reminder',
+                        vehicle: r.vehicle,
+                        originalReminder: r
+                    });
+                });
+            }
+
+            function updateReminderOptions(taxDateStr, vehicleId = null) {
+                const reminderButtons = reminderDaysToggle.querySelectorAll('.rm-toggle-btn');
+                const submitFormBtn = document.querySelector('#reminderForm .rm-btn-submit');
+
+                if (!taxDateStr) {
+                    // Nonaktifkan semua jika tidak ada kendaraan terpilih
+                    reminderButtons.forEach(btn => {
+                        btn.disabled = true;
+                        btn.classList.remove('active');
+                        btn.classList.add('disabled');
+                        btn.title = "Pilih kendaraan terlebih dahulu";
+                    });
+                    reminderDaysInput.value = '';
+                    
+                    if (submitFormBtn) {
+                        submitFormBtn.disabled = true;
+                        submitFormBtn.style.opacity = '0.5';
+                        submitFormBtn.style.cursor = 'not-allowed';
+                        submitFormBtn.textContent = 'Pilih Kendaraan';
+                    }
+                    return;
+                }
+
+                const taxDate = new Date(taxDateStr);
+                taxDate.setHours(0, 0, 0, 0);
+                const diffTime = taxDate.getTime() - today.getTime();
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+                // Cek pengingat apa saja yang sudah diset untuk kendaraan ini
+                let existingTypes = [];
+                if (vehicleId) {
+                    existingTypes = reminders
+                        .filter(r => r.vehicle_id == vehicleId)
+                        .map(r => String(r.reminder_type));
+                }
+
+                let firstAvailable = null;
+
+                reminderButtons.forEach(btn => {
+                    const days = parseInt(btn.dataset.days, 10);
+                    btn.classList.remove('active');
+
+                    const isAlreadySet = existingTypes.includes(String(days));
+
+                    if (diffDays < days || isAlreadySet) {
+                        btn.disabled = true;
+                        btn.classList.add('disabled');
+                        if (isAlreadySet) {
+                            btn.title = "Pengingat ini sudah diatur";
+                        } else {
+                            btn.title = "Tanggal jatuh tempo terlalu dekat";
+                        }
+                    } else {
+                        btn.disabled = false;
+                        btn.classList.remove('disabled');
+                        btn.title = "";
+                        if (!firstAvailable) firstAvailable = btn;
+                    }
+                });
+
+                if (firstAvailable) {
+                    firstAvailable.classList.add('active');
+                    reminderDaysInput.value = firstAvailable.dataset.days;
+                    if (submitFormBtn) {
+                        submitFormBtn.disabled = false;
+                        submitFormBtn.style.opacity = '1';
+                        submitFormBtn.style.cursor = 'pointer';
+                        submitFormBtn.textContent = 'Simpan Pengingat';
+                    }
+                } else {
+                    reminderDaysInput.value = '';
+                    if (submitFormBtn) {
+                        submitFormBtn.disabled = true;
+                        submitFormBtn.style.opacity = '0.5';
+                        submitFormBtn.style.cursor = 'not-allowed';
+                        submitFormBtn.textContent = 'Opsi pengingat tidak tersedia';
+                    }
+                }
+            }
+
+            function resetVehicleTypeButtons() {
+                btnMotor.classList.remove('active');
+                btnMobil.classList.remove('active');
+                btnMotor.classList.add('locked');
+                btnMobil.classList.add('locked');
+                vehicleTypeInput.value = '';
+            }
+
+            // Init form state ke default (disabled)
+            resetVehicleTypeButtons();
+            updateReminderOptions(null);
 
             function lockVehicleTypeButtons(activeType) {
                 // Reset semua dulu
@@ -191,14 +326,6 @@
                 }
             }
 
-            function unlockVehicleTypeButtons() {
-                btnMotor.classList.remove('locked', 'active');
-                btnMobil.classList.remove('locked', 'active');
-                // Default ke motor
-                btnMotor.classList.add('active');
-                vehicleTypeInput.value = 'motor';
-            }
-
             function setVehicleType(type) {
                 vehicleTypeToggle.querySelectorAll('.rm-toggle-btn').forEach(b => b.classList.remove('active'));
                 if (type === 'motor') {
@@ -213,15 +340,30 @@
             // Reminder Days Toggle (always functional)
             reminderDaysToggle.querySelectorAll('.rm-toggle-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
+                    if (this.disabled) return;
                     reminderDaysToggle.querySelectorAll('.rm-toggle-btn').forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                     reminderDaysInput.value = this.dataset.days;
+
+                    // Update preview on mini calendar
+                    const dueDateStr = taxDueDateInput.value;
+                    if (dueDateStr) {
+                        const dueDate = new Date(dueDateStr);
+                        const reminderDays = parseInt(this.dataset.days, 10);
+                        activeReminderPreviewDate = new Date(dueDate);
+                        activeReminderPreviewDate.setDate(dueDate.getDate() - reminderDays);
+                        activeReminderPreviewDate.setHours(0, 0, 0, 0);
+                    } else {
+                        activeReminderPreviewDate = null;
+                    }
+                    renderMiniCalendar();
                 });
             });
 
             // Vehicle Select Change
             vehicleSelect.addEventListener('change', function() {
                 const selectedOption = this.options[this.selectedIndex];
+                activeReminderPreviewDate = null; // Reset preview on new selection
 
                 if (selectedOption.value && selectedOption.dataset.taxDate) {
                     taxDueDateInput.value = selectedOption.dataset.taxDate;
@@ -237,13 +379,16 @@
                         lockVehicleTypeButtons(vehicleType);
                     }
 
+                    updateReminderOptions(selectedOption.dataset.taxDate, selectedOption.value);
                     updateMonthYear();
                     renderCalendar();
                     renderMiniCalendar();
                 } else {
                     taxDueDateInput.value = '';
                     selectedDate = null;
-                    unlockVehicleTypeButtons();
+                    activeReminderPreviewDate = null;
+                    updateReminderOptions(null);
+                    resetVehicleTypeButtons();
                     renderCalendar();
                     renderMiniCalendar();
                 }
@@ -284,15 +429,14 @@
 
             // Cancel Button
             document.getElementById('btnCancel').addEventListener('click', function() {
+                vehicleSelect.value = "";
                 document.getElementById('reminderForm').reset();
                 selectedDate = null;
                 taxDueDateInput.value = '';
+                activeReminderPreviewDate = null;
 
-                unlockVehicleTypeButtons(); // Unlock semua, default motor aktif
-
-                reminderDaysToggle.querySelectorAll('.rm-toggle-btn').forEach(b => b.classList.remove('active'));
-                reminderDaysToggle.querySelector('[data-days="3"]').classList.add('active');
-                reminderDaysInput.value = '3';
+                resetVehicleTypeButtons(); // Reset state tipe kendaraan
+                updateReminderOptions(null); // Reset dan nonaktifkan tombol pengingat
 
                 currentDate = new Date(today.getFullYear(), today.getMonth(), 1);
                 updateMonthYear();
@@ -351,32 +495,53 @@
                 const dateTime = date.getTime();
                 const isToday = dateTime === today.getTime();
                 const isSelected = selectedDate && dateTime === selectedDate.getTime();
-                const eventsOnDate = reminders.filter(r => {
-                    if (!r.tanggal) return false;
-                    return r.tanggal.substring(0, 10) === dateStr;
+
+                // Event jatuh tempo (blok merah)
+                const dueEventsOnDate = reminders.filter(r => r.tanggal?.substring(0, 10) === dateStr);
+
+                // Hapus duplikat agar satu kendaraan hanya muncul 1 blok meskipun punya banyak pengingat
+                const uniqueDueEvents = [];
+                const seenVehicles = new Set();
+                dueEventsOnDate.forEach(event => {
+                    if (!seenVehicles.has(event.vehicle_id)) {
+                        seenVehicles.add(event.vehicle_id);
+                        uniqueDueEvents.push(event);
+                    }
                 });
-                const hasEvent = eventsOnDate.length > 0;
-                const isOverdue = hasEvent && dateTime < today.getTime();
+                const hasDueEvent = uniqueDueEvents.length > 0;
+
+                // Event pengingat (titik ungu)
+                const reminderEventsOnDate = reminderEvents.filter(e => e.date === dateStr && e.type === 'reminder');
+                const hasReminderEvent = reminderEventsOnDate.length > 0;
+
+                const isOverdue = hasDueEvent && dateTime < today.getTime();
 
                 let cellClass = 'rm-cal-cell';
                 if (isToday) cellClass += ' today';
                 if (isSelected) cellClass += ' selected';
-                if (hasEvent) cellClass += ' has-event';
+                if (hasDueEvent) cellClass += ' has-event';
 
                 let html = `<div class="${cellClass}" data-date="${dateStr}">`;
                 html += '<div class="rm-date-top">';
-                if (hasEvent && !isMuted) {
-                    html += '<div class="rm-event-dot"></div>';
+                // Titik-titik event
+                if (hasDueEvent && !isMuted) {
+                    html += '<div class="rm-event-dot" title="Jatuh Tempo"></div>';
                 }
+                if (hasReminderEvent && !isMuted) {
+                    html += '<div class="rm-event-dot reminder-dot" title="Pengingat Aktif"></div>';
+                }
+                // Angka tanggal
                 html += `<div class="rm-date-num${isMuted ? ' muted' : ''}">${day}</div>`;
                 html += '</div>';
 
-                if (hasEvent && !isMuted) {
-                    eventsOnDate.forEach(event => {
+                // Blok event jatuh tempo
+                if (hasDueEvent && !isMuted) {
+                    uniqueDueEvents.forEach(event => {
                         const overdueClass = isOverdue ? ' overdue' : '';
                         const noPolisi = event.vehicle?.no_polisi || event.no_polisi || 'Kendaraan';
                         const jenis = event.vehicle?.jenis || event.jenis || '';
-                        html += `<div class="rm-event-block${overdueClass}" title="${noPolisi}">`;
+                        const vehicleId = event.vehicle_id;
+                        html += `<div class="rm-event-block${overdueClass}" title="Klik untuk detail ${noPolisi}" data-vehicle-id="${vehicleId}">`;
                         html += `Pajak ${jenis}<br>(${noPolisi})`;
                         html += '</div>';
                     });
@@ -408,15 +573,16 @@
                     const dateTime = date.getTime();
                     const isToday = dateTime === today.getTime();
                     const isSelected = selectedDate && dateTime === selectedDate.getTime();
-                    const hasEvent = reminders.some(r => {
-                        if (!r.tanggal) return false;
-                        return r.tanggal.substring(0, 10) === dateStr;
-                    });
+                    const isPreview = activeReminderPreviewDate && dateTime === activeReminderPreviewDate.getTime();
+
+                    const hasDueEvent = reminders.some(r => r.tanggal?.substring(0, 10) === dateStr);
+                    const hasReminderEvent = reminderEvents.some(e => e.date === dateStr && e.type === 'reminder');
 
                     let dateClass = 'rm-mini-date';
-                    if (isToday) dateClass += ' solid';
-                    else if (isSelected) dateClass += ' outline';
-                    else if (hasEvent) dateClass += ' has-event';
+                    if (isSelected) dateClass += ' due-date-full'; // Jatuh tempo pakai background full
+                    else if (isPreview) dateClass += ' preview-outline'; // Pengingat pakai garis tepi
+                    else if (isToday) dateClass += ' today-subtle'; // Hari ini dibuat kalem
+                    else if (hasDueEvent || hasReminderEvent) dateClass += ' has-event';
 
                     html += `<div class="${dateClass}">${day}</div>`;
                 }
@@ -435,12 +601,62 @@
                 currentMonthYear.textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
             }
 
+            // ========== MODAL HANDLING ==========
+            calendarGrid.addEventListener('click', function(e) {
+                const eventBlock = e.target.closest('.rm-event-block');
+                if (eventBlock && eventBlock.dataset.vehicleId) {
+                    const vehicleId = parseInt(eventBlock.dataset.vehicleId, 10);
+
+                    // Find the reminder which contains the vehicle data
+                    const reminder = reminders.find(r => r.vehicle_id === vehicleId);
+                    if (reminder && reminder.vehicle) {
+                        const vehicle = reminder.vehicle;
+                        const dueDate = new Date(vehicle.tanggal_pajak);
+                        dueDate.setHours(0, 0, 0, 0);
+                        const isOverdue = dueDate.getTime() < today.getTime();
+
+                        // Populate modal
+                        document.getElementById('modalNoPolisi').textContent = vehicle.no_polisi;
+                        document.getElementById('modalJenis').textContent = vehicle.jenis.charAt(0).toUpperCase() + vehicle.jenis.slice(1);
+                        document.getElementById('modalWarna').textContent = vehicle.warna;
+                        document.getElementById('modalTanggalPajak').textContent = dueDate.toLocaleDateString('id-ID', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                        });
+
+                        const statusSpan = document.getElementById('modalStatus');
+                        statusSpan.textContent = isOverdue ? 'Jatuh Tempo' : 'Aktif';
+                        statusSpan.style.color = isOverdue ? 'var(--clr-danger)' : 'var(--clr-success)';
+
+                        // Set payment button link
+                        const paymentUrl = `/pembayaran/${vehicle.id}`;
+                        document.getElementById('modalBayarBtn').href = paymentUrl;
+
+                        // Show modal
+                        eventDetailModal.style.display = 'flex';
+                    }
+                }
+            });
+
+            // Close modal listeners
+            modalCloseBtn.addEventListener('click', () => {
+                eventDetailModal.style.display = 'none';
+            });
+
+            eventDetailModal.addEventListener('click', function(e) {
+                if (e.target === this) { // Click on overlay
+                    eventDetailModal.style.display = 'none';
+                }
+            });
+
             // Initial Render
             // If first vehicle has tax date, auto-select it
             if (vehicleSelect.options.length > 1 && vehicleSelect.options[1].value) {
                 // Don't auto-select, let user choose
             }
 
+            processReminders();
             renderCalendar();
             renderMiniCalendar();
             updateMonthYear();

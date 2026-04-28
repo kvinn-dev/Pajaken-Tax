@@ -113,7 +113,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Silver',
             'jenis' => 'mobil',
             'bahan_bakar' => 'Solar',
-            'tanggal_pajak' => '2026-04-28'
+            'tanggal_pajak' => '2026-05-07'
         ]);
 
         Vehicle::create([
@@ -124,7 +124,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Biru',
             'jenis' => 'motor',
             'bahan_bakar' => 'Bensin',
-            'tanggal_pajak' => '2026-06-12'
+            'tanggal_pajak' => '2026-05-01'
         ]);
 
         Vehicle::create([
@@ -135,7 +135,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Hijau',
             'jenis' => 'motor',
             'bahan_bakar' => 'Bensin',
-            'tanggal_pajak' => '2025-06-30'
+            'tanggal_pajak' => '2026-06-30'
         ]);
     }
 }

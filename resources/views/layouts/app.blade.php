@@ -122,11 +122,6 @@
                         </div>
                         @empty
                         <div class="dropdown-empty">
-                            <div class="dropdown-empty-icon">
-                                <svg width="40" height="40" fill="none" stroke="#d1d5db" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9zm-6 13a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
-                                </svg>
-                            </div>
                             <p class="dropdown-empty-text">Tidak ada notifikasi</p>
                             <p class="dropdown-empty-subtext">Notifikasi akan muncul di sini</p>
                         </div>

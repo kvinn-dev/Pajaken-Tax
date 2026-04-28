@@ -44,7 +44,7 @@
                         <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9zm-6 13a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
                     </svg>
                     @if($unreadNotificationsCount ?? 0 > 0)
-                        <div class="bell-dot"></div>
+                    <div class="bell-dot"></div>
                     @endif
                 </div>
 
@@ -56,39 +56,80 @@
                     </div>
                     <div class="dropdown-body">
                         @forelse($notifications ?? [] as $notification)
-                            <div class="dropdown-notif-item {{ !$notification->read_at ? 'unread' : '' }}" data-id="{{ $notification->id }}">
-                                <div class="dropdown-notif-icon {{ $notification->type }}">
-                                    @if($notification->type == 'jatuh_tempo')
-                                        <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <path d="M12 6v6l4 2"></path>
-                                        </svg>
-                                    @elseif($notification->type == 'selesai')
-                                        <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
-                                            <path d="M20 6L9 17l-5-5"></path>
-                                        </svg>
-                                    @elseif($notification->type == 'masalah')
-                                        <img width="20" height="20" src="https://img.icons8.com/ios/50/ffffff/error--v1.png" alt="error"/>
-                                    @else
-                                        <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
-                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                            <path d="M16 2v4M8 2v4M3 10h18M9 16h6"></path>
-                                        </svg>
-                                    @endif
-                                </div>
-                                <div class="dropdown-notif-content">
-                                    <p class="dropdown-notif-title">{{ $notification->title }}</p>
-                                    <p class="dropdown-notif-desc">{{ Str::limit($notification->message, 50) }}</p>
-                                    <span class="dropdown-notif-time">{{ $notification->created_at->diffForHumans() }}</span>
-                                </div>
-                                @if(!$notification->read_at)
-                                    <div class="dropdown-notif-dot"></div>
+                        <div class="dropdown-notif-item {{ !$notification->read_at ? 'unread' : '' }}" data-id="{{ $notification->id }}">
+                            <!-- Icon berdasarkan tipe dengan warna yang disesuaikan -->
+                            <div class="dropdown-notif-icon 
+                        {{ $notification->type === 'info' ? 'bg-blue-500' : '' }}
+                        {{ $notification->type === 'maintenance' ? 'bg-amber-500' : '' }}
+                        {{ $notification->type === 'greeting' ? 'bg-pink-500' : '' }}
+                        {{ $notification->type === 'event' ? 'bg-purple-500' : '' }}
+                        {{ $notification->type === 'promo' ? 'bg-emerald-500' : '' }}
+                        {{ $notification->type === 'jatuh_tempo' ? 'bg-red-500' : '' }}
+                        {{ $notification->type === 'selesai' ? 'bg-green-500' : '' }}
+                        {{ $notification->type === 'masalah' ? 'bg-orange-500' : '' }}">
+                                @if($notification->type === 'info')
+                                <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 16v-4M12 8h.01"></path>
+                                </svg>
+                                @elseif($notification->type === 'maintenance')
+                                <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                @elseif($notification->type === 'greeting')
+                                <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                                </svg>
+                                @elseif($notification->type === 'event')
+                                <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <path d="M16 2v4M8 2v4M3 10h18"></path>
+                                </svg>
+                                @elseif($notification->type === 'promo')
+                                <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                @elseif($notification->type === 'jatuh_tempo')
+                                <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
+                                @elseif($notification->type === 'selesai')
+                                <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                                @elseif($notification->type === 'masalah')
+                                <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 8v4M12 16h.01"></path>
+                                </svg>
+                                @else
+                                <svg width="16" height="16" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 16v-4M12 8h.01"></path>
+                                </svg>
                                 @endif
                             </div>
-                        @empty
-                            <div class="dropdown-empty">
-                                <p>Tidak ada notifikasi</p>
+                            <div class="dropdown-notif-content">
+                                <p class="dropdown-notif-title">{{ $notification->title }}</p>
+                                <p class="dropdown-notif-desc">{{ Str::limit($notification->message, 50) }}</p>
+                                <span class="dropdown-notif-time">{{ $notification->created_at->diffForHumans() }}</span>
                             </div>
+                            @if(!$notification->read_at)
+                            <div class="dropdown-notif-dot"></div>
+                            @endif
+                        </div>
+                        @empty
+                        <div class="dropdown-empty">
+                            <div class="dropdown-empty-icon">
+                                <svg width="40" height="40" fill="none" stroke="#d1d5db" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9zm-6 13a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+                                </svg>
+                            </div>
+                            <p class="dropdown-empty-text">Tidak ada notifikasi</p>
+                            <p class="dropdown-empty-subtext">Notifikasi akan muncul di sini</p>
+                        </div>
                         @endforelse
                     </div>
                     <a href="{{ route('notifications.index') }}" class="dropdown-view-all">Lihat Semua Notifikasi</a>
@@ -133,7 +174,7 @@
             const dropdown = document.getElementById('notificationDropdown');
             const overlay = document.getElementById('dropdownOverlay');
             const isHidden = dropdown.classList.contains('hidden');
-            
+
             if (isHidden) {
                 dropdown.classList.remove('hidden');
                 overlay.classList.remove('hidden');
@@ -151,25 +192,26 @@
         function markAllAsRead(event) {
             event.stopPropagation();
             fetch('{{ route("notifications.markAllRead") }}', {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                    'Content-Type': 'application/json'
-                }
-            }).then(response => response.json())
-              .then(data => {
-                  if (data.success) {
-                      document.querySelectorAll('.dropdown-notif-item.unread').forEach(item => {
-                          item.classList.remove('unread');
-                      });
-                      document.querySelectorAll('.dropdown-notif-dot').forEach(dot => {
-                          dot.remove();
-                      });
-                      const bellDot = document.querySelector('.bell-dot');
-                      if (bellDot) bellDot.remove();
-                  }
-              });
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        document.querySelectorAll('.dropdown-notif-item.unread').forEach(item => {
+                            item.classList.remove('unread');
+                        });
+                        document.querySelectorAll('.dropdown-notif-dot').forEach(dot => {
+                            dot.remove();
+                        });
+                        const bellDot = document.querySelector('.bell-dot');
+                        if (bellDot) bellDot.remove();
+                    }
+                });
         }
     </script>
 </body>
+
 </html>

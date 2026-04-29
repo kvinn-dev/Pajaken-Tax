@@ -48,11 +48,11 @@
                     <path d="M21 21l-4.35-4.35"></path>
                 </svg>
                 <input type="text" placeholder="Cari nomor polisi atau NIK..."
-                    class="w-full pl-9 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white">
+                    class="w-full pl-9 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent bg-white">
             </div>
             <!-- Filter Jenis -->
             <div class="relative">
-                <select class="appearance-none pl-4 pr-10 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-600 cursor-pointer">
+                <select class="appearance-none pl-4 pr-10 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent bg-white text-gray-600 cursor-pointer">
                     <option value="">Semua Jenis</option>
                     <option value="motor">Motor</option>
                     <option value="mobil">Mobil</option>
@@ -64,7 +64,7 @@
 
             <!-- Filter Status -->
             <div class="relative">
-                <select class="appearance-none pl-4 pr-10 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-gray-600 cursor-pointer">
+                <select class="appearance-none pl-4 pr-10 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#4f46e5] focus:border-transparent bg-white text-gray-600 cursor-pointer">
                     <option value="">Semua Status</option>
                     <option value="active">Aktif</option>
                     <option value="overdue">Jatuh Tempo</option>
@@ -338,7 +338,7 @@
                         <div class="md:col-span-2 mt-2">
                             <h4 class="font-semibold text-gray-700 border-b pb-2 text-sm uppercase tracking-wider">Spesifikasi Kendaraan</h4>
                         </div>
-                        <div><label class="block text-sm font-medium text-gray-700 mb-1">No. Polisi <span class="text-red-500">*</span></label><input type="text" name="no_polisi" required placeholder="Contoh: B 1234 ABC" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 text-sm uppercase"></div>
+                        <div><label class="block text-sm font-medium text-gray-700 mb-1">No. Polisi <span class="text-red-500">*</span></label><input type="text" name="no_polisi" required placeholder="Contoh: B 1234 ABC" class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 text-sm"></div>
                         <div><label class="block text-sm font-medium text-gray-700 mb-1">Jenis Kendaraan <span class="text-red-500">*</span></label><select name="jenis" required class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 text-sm">
                                 <option value="motor">Motor</option>
                                 <option value="mobil">Mobil</option>

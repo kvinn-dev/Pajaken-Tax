@@ -301,12 +301,7 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1.5">Judul Pesan <span class="text-red-500">*</span></label>
                             <div class="relative">
-                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                                    </svg>
-                                </div>
-                                <input type="text" name="title" required placeholder="Contoh: Selamat Hari Raya Idul Fitri 1446 H" class="w-full pl-9 pr-4 py-2.5 rounded-xl border-gray-200 focus:border-indigo-500 focus:ring-indigo-500 text-sm bg-gray-50/50">
+                                <input type="text" name="title" required placeholder="Contoh: Selamat Hari Raya Idul Fitri 1446 H" class="w-full py-2.5 rounded-xl border-gray-200 focus:border-indigo-500 focus:ring-indigo-500 text-sm bg-gray-50/50">
                             </div>
                         </div>
                         <div>

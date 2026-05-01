@@ -36,6 +36,12 @@ Route::middleware(['auth'])->group(function () {
         // Reminder Resource
         Route::get('/pengingat', [ReminderController::class, 'index'])->name('reminder.index');
         Route::post('/pengingat', [ReminderController::class, 'store'])->name('reminder.store');
+
+        // Halaman Bantuan (dari Footer)
+        Route::view('/faq', 'pages.faq')->name('faq');
+        Route::view('/panduan', 'pages.panduan')->name('panduan');
+        Route::view('/syarat-dan-ketentuan', 'pages.terms')->name('terms');
+        Route::view('/kebijakan-privasi', 'pages.privacy')->name('privacy');
     });
 
     // Admin Routes

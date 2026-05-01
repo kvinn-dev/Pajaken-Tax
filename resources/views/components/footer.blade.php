@@ -133,10 +133,10 @@
                     Bantuan
                 </h4>
                 <ul class="space-y-3">
-                    <li><a href="#" class="text-gray-500 hover:text-[#4f46e5] text-sm transition-all duration-300 hover:translate-x-1 inline-block">FAQ</a></li>
-                    <li><a href="#" class="text-gray-500 hover:text-[#4f46e5] text-sm transition-all duration-300 hover:translate-x-1 inline-block">Panduan</a></li>
-                    <li><a href="#" class="text-gray-500 hover:text-[#4f46e5] text-sm transition-all duration-300 hover:translate-x-1 inline-block">Syarat & Ketentuan</a></li>
-                    <li><a href="#" class="text-gray-500 hover:text-[#4f46e5] text-sm transition-all duration-300 hover:translate-x-1 inline-block">Kebijakan Privasi</a></li>
+                    <li><a href="{{ route('faq') }}" class="text-gray-500 hover:text-[#4f46e5] text-sm transition-all duration-300 hover:translate-x-1 inline-block">FAQ</a></li>
+                    <li><a href="{{ route('panduan') }}" class="text-gray-500 hover:text-[#4f46e5] text-sm transition-all duration-300 hover:translate-x-1 inline-block">Panduan</a></li>
+                    <li><a href="{{ route('terms') }}" class="text-gray-500 hover:text-[#4f46e5] text-sm transition-all duration-300 hover:translate-x-1 inline-block">Syarat & Ketentuan</a></li>
+                    <li><a href="{{ route('privacy') }}" class="text-gray-500 hover:text-[#4f46e5] text-sm transition-all duration-300 hover:translate-x-1 inline-block">Kebijakan Privasi</a></li>
                 </ul>
             </div>
 

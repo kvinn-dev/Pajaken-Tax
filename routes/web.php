@@ -39,7 +39,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Halaman Bantuan (dari Footer)
         Route::view('/faq', 'pages.faq')->name('faq');
-        Route::view('/panduan', 'pages.panduan')->name('panduan');
+        Route::view('/panduan', 'pages.guide')->name('guide');
         Route::view('/syarat-dan-ketentuan', 'pages.terms')->name('terms');
         Route::view('/kebijakan-privasi', 'pages.privacy')->name('privacy');
     });

@@ -3,10 +3,10 @@
         <!-- LEFT SIDE - ILLUSTRATION -->
         <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-gradient-to-br from-[#4f46e5] via-[#2563eb] to-[#7c3aed]">
             <!-- Decorative Shapes -->
-            <div class="absolute top-0 right-0 w-96 h-96 translate-x-1/3 -translate-y-1/3">
+            <div class="absolute top-0 left-0 w-96 h-96 -translate-x-1/2 -translate-y-1/2">
                 <div class="w-full h-full bg-white/10 rounded-full blur-3xl"></div>
             </div>
-            <div class="absolute bottom-0 left-0 w-80 h-80 -translate-x-1/3 translate-y-1/3">
+            <div class="absolute bottom-0 right-0 w-80 h-80 translate-x-1/3 translate-y-1/3">
                 <div class="w-full h-full bg-white/10 rounded-full blur-3xl"></div>
             </div>
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64">

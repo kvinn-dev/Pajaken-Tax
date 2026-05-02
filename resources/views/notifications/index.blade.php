@@ -14,12 +14,12 @@
 <body class="bg-white">
     <!-- HEADER -->
     <header class="top-nav-notif">
-        <a href="{{ url()->previous() != url()->current() ? url()->previous() : route('dashboard') }}" class="nav-back-btn-notif">
+        <a href="{{ (url()->previous() != route('profile.index') && url()->previous() != url()->current()) ? url()->previous() : route('dashboard') }}" class="nav-back-btn-notif">
             <img width="22" height="22" src="https://img.icons8.com/ios-filled/50/4f46e5/back.png" alt="back" />
             Kembali
         </a>
         <div class="nav-right">
-            <a href="{{ route('profile.edit') }}">
+            <a href="{{ route('profile.index') }}">
                 <div class="nav-avatar">
                     <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name ?? 'User') }}&background=f0ebff&color=6200ff" alt="profile" />
                 </div>

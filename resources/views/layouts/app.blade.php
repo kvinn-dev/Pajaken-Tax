@@ -131,7 +131,7 @@
                 </div>
             </div>
 
-            <a href="{{ route('profile.edit') }}">
+            <a href="{{ route('profile.index') }}">
                 <div class="nav-avatar">
                     <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name ?? 'User') }}&background=f0ebff&color=464fe5" alt="profile" />
                 </div>

@@ -56,6 +56,31 @@ class NotificationController extends Controller
                 'type_bg' => '#2383e3',
                 'type_label' => 'Konfirmasi',
             ],
+            'info' => [
+                'type_color' => 'blue',
+                'type_bg' => '#3b82f6',
+                'type_label' => 'Informasi',
+            ],
+            'maintenance' => [
+                'type_color' => 'amber',
+                'type_bg' => '#f59e0b',
+                'type_label' => 'Pemeliharaan',
+            ],
+            'greeting' => [
+                'type_color' => 'pink',
+                'type_bg' => '#ec4899',
+                'type_label' => 'Ucapan',
+            ],
+            'event' => [
+                'type_color' => 'purple',
+                'type_bg' => '#8b5cf6',
+                'type_label' => 'Acara',
+            ],
+            'promo' => [
+                'type_color' => 'emerald',
+                'type_bg' => '#10b981',
+                'type_label' => 'Promo',
+            ],
         ];
 
         return $configs[$type] ?? [

@@ -94,8 +94,17 @@
                 <div class="rm-form-group">
                     <label class="rm-label">Tanggal Jatuh Tempo Pajak</label>
                     <div class="rm-input-wrapper">
-                        <input type="date" class="rm-input" name="tanggal" id="taxDueDate" required readonly style="background-color: #f9f9fb; cursor: default;" />
-                        <div class="rm-input-icon">
+                        <input
+                            type="text"
+                            class="rm-input opacity-50 cursor-not-allowed"
+                            name="tanggal_display"
+                            id="taxDueDateDisplay"
+                            disabled
+                            readonly
+                            placeholder="Pilih kendaraan terlebih dahulu"
+                            style="background-color: #f5f5f5; color: #9ca3af; border-color: #e5e7eb;" />
+                        <input type="hidden" name="tanggal" id="taxDueDate" value="" />
+                        <div class="rm-input-icon opacity-30">
                             <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                 <path d="M16 2v4M8 2v4M3 10h18"></path>
@@ -230,7 +239,7 @@
                         btn.title = "Pilih kendaraan terlebih dahulu";
                     });
                     reminderDaysInput.value = '';
-                    
+
                     if (submitFormBtn) {
                         submitFormBtn.disabled = true;
                         submitFormBtn.style.opacity = '0.5';
@@ -361,19 +370,39 @@
             });
 
             // Vehicle Select Change
+            // Vehicle Select Change
             vehicleSelect.addEventListener('change', function() {
                 const selectedOption = this.options[this.selectedIndex];
-                activeReminderPreviewDate = null; // Reset preview on new selection
+                activeReminderPreviewDate = null;
+
+                // Elemen display dan hidden
+                const taxDueDateDisplay = document.getElementById('taxDueDateDisplay');
+                const taxDueDateInput = document.getElementById('taxDueDate');
 
                 if (selectedOption.value && selectedOption.dataset.taxDate) {
+                    // Set hidden input value
                     taxDueDateInput.value = selectedOption.dataset.taxDate;
-                    const [y, m, d] = selectedOption.dataset.taxDate.split('-').map(Number);
-                    selectedDate = new Date(y, m - 1, d);
-                    selectedDate.setHours(0, 0, 0, 0);
 
+                    // Format tanggal untuk display
+                    const [y, m, d] = selectedOption.dataset.taxDate.split('-').map(Number);
+                    const dueDate = new Date(y, m - 1, d);
+                    const formattedDate = dueDate.toLocaleDateString('id-ID', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                    });
+
+                    // Tampilkan di input display
+                    taxDueDateDisplay.value = formattedDate;
+                    taxDueDateDisplay.style.color = '#374151'; // Warna normal
+                    taxDueDateDisplay.style.opacity = '1';
+                    taxDueDateDisplay.style.backgroundColor = '#f9f9fb';
+                    taxDueDateDisplay.style.borderColor = '#d1d5db';
+
+                    selectedDate = dueDate;
+                    selectedDate.setHours(0, 0, 0, 0);
                     currentDate = new Date(y, m - 1, 1);
 
-                    // Lock type sesuai data kendaraan
                     const vehicleType = selectedOption.dataset.type;
                     if (vehicleType) {
                         lockVehicleTypeButtons(vehicleType);
@@ -384,7 +413,15 @@
                     renderCalendar();
                     renderMiniCalendar();
                 } else {
+                    // Reset ke placeholder
                     taxDueDateInput.value = '';
+                    taxDueDateDisplay.value = '';
+                    taxDueDateDisplay.placeholder = 'Pilih kendaraan terlebih dahulu';
+                    taxDueDateDisplay.style.color = '#9ca3af';
+                    taxDueDateDisplay.style.opacity = '0.5';
+                    taxDueDateDisplay.style.backgroundColor = '#f5f5f5';
+                    taxDueDateDisplay.style.borderColor = '#e5e7eb';
+
                     selectedDate = null;
                     activeReminderPreviewDate = null;
                     updateReminderOptions(null);
@@ -428,15 +465,26 @@
             });
 
             // Cancel Button
+            // Cancel Button
             document.getElementById('btnCancel').addEventListener('click', function() {
                 vehicleSelect.value = "";
                 document.getElementById('reminderForm').reset();
                 selectedDate = null;
-                taxDueDateInput.value = '';
                 activeReminderPreviewDate = null;
 
-                resetVehicleTypeButtons(); // Reset state tipe kendaraan
-                updateReminderOptions(null); // Reset dan nonaktifkan tombol pengingat
+                // Reset tax due date display
+                const taxDueDateDisplay = document.getElementById('taxDueDateDisplay');
+                const taxDueDateInput = document.getElementById('taxDueDate');
+                taxDueDateInput.value = '';
+                taxDueDateDisplay.value = '';
+                taxDueDateDisplay.placeholder = 'Pilih kendaraan terlebih dahulu';
+                taxDueDateDisplay.style.color = '#9ca3af';
+                taxDueDateDisplay.style.opacity = '0.5';
+                taxDueDateDisplay.style.backgroundColor = '#f5f5f5';
+                taxDueDateDisplay.style.borderColor = '#e5e7eb';
+
+                resetVehicleTypeButtons();
+                updateReminderOptions(null);
 
                 currentDate = new Date(today.getFullYear(), today.getMonth(), 1);
                 updateMonthYear();

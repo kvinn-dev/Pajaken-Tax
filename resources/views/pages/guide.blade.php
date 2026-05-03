@@ -103,22 +103,18 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Quick Tips -->
-            <div class="guide-tips">
-                <h3>
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Tips Penting
-                </h3>
-                <ul>
-                    <li>Pastikan NIK yang dimasukkan sesuai dengan STNK kendaraan Anda.</li>
-                    <li>Periksa folder Spam jika email verifikasi tidak muncul di inbox.</li>
-                    <li>Gunakan password yang kuat dan jangan bagikan ke orang lain.</li>
-                    <li>Hubungi support jika kendaraan tidak muncul setelah ditambahkan.</li>
-                </ul>
-            </div>
+        </div>
+        <!-- Bottom CTA -->
+        <div class="guide-cta">
+            <h3>Masih ada pertanyaan?</h3>
+            <p>Tim support kami siap membantu Anda.</p>
+            <a href="mailto:support@pajaken.id" class="guide-cta-btn">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Hubungi Kami
+            </a>
         </div>
     </div>
+    <x-footer />
 </x-app-layout>

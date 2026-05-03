@@ -117,18 +117,18 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Contact Box -->
-            <div class="privacy-contact">
-                <h3>Punya pertanyaan tentang privasi?</h3>
-                <p>Hubungi tim kami jika Anda memiliki kekhawatiran tentang data pribadi Anda.</p>
-                <a href="mailto:privacy@pajaken.id" class="privacy-contact-btn">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    privacy@pajaken.id
-                </a>
-            </div>
+        </div>
+        <!-- Bottom CTA -->
+        <div class="privacy-cta">
+            <h3>Masih ada pertanyaan?</h3>
+            <p>Tim support kami siap membantu Anda.</p>
+            <a href="mailto:support@pajaken.id" class="privacy-cta-btn">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Hubungi Kami
+            </a>
         </div>
     </div>
+    <x-footer />
 </x-app-layout>

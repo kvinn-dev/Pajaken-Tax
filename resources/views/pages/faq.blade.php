@@ -67,7 +67,7 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            <p>Ya, <strong>Pajaken</strong> sepenuhnya <span class="highlight-text">gratis</span> tanpa biaya apapun.</p>
+                            <p>Ya, Pajaken sepenuhnya <strong>gratis</strong> tanpa biaya apapun.</p>
                         </div>
                     </div>
                 </div>
@@ -238,4 +238,5 @@
             });
         });
     </script>
+    <x-footer />
 </x-app-layout>

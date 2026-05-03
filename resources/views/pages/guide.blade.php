@@ -17,11 +17,7 @@
                     <div class="guide-step-badge">01</div>
                     <div class="guide-card-body">
                         <div class="guide-icon-wrap">
-                            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" />
-                                <circle cx="8.5" cy="7" r="4" />
-                                <polyline points="17 11 19 13 23 9" />
-                            </svg>
+                            <img width="32" height="32" src="https://img.icons8.com/windows/32/4f46e5/check-male--v1.png" alt="check-male--v1" />
                         </div>
                         <div class="guide-text">
                             <h3>Daftar & Masuk</h3>
@@ -40,12 +36,7 @@
                     <div class="guide-step-badge">02</div>
                     <div class="guide-card-body">
                         <div class="guide-icon-wrap">
-                            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="1" y="3" width="15" height="13" />
-                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
-                                <circle cx="5.5" cy="18.5" r="2.5" />
-                                <circle cx="18.5" cy="18.5" r="2.5" />
-                            </svg>
+                            <img width="38" height="38" src="https://img.icons8.com/sf-regular/48/4f46e5/car.png" alt="car"/>
                         </div>
                         <div class="guide-text">
                             <h3>Tambahkan Data Kendaraan</h3>
@@ -64,9 +55,8 @@
                     <div class="guide-step-badge">03</div>
                     <div class="guide-card-body">
                         <div class="guide-icon-wrap">
-                            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                                <path d="M13.73 21a2 2 0 01-3.46 0" />
+                            <svg width="28" height="28" fill="none" stroke="#4f46e5" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9zm-6 13a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
                             </svg>
                         </div>
                         <div class="guide-text">
@@ -86,7 +76,7 @@
                     <div class="guide-step-badge">04</div>
                     <div class="guide-card-body">
                         <div class="guide-icon-wrap">
-                            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <svg width="28" height="28" fill="none" stroke="#4f46e5" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="11" cy="11" r="8" />
                                 <path d="M21 21l-4.35-4.35" />
                             </svg>

@@ -8,6 +8,7 @@ use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReminderController;
 use App\Http\Controllers\AdminNotificationController;
+use App\Http\Controllers\PaymentController;
 
 Route::redirect('/', '/login');
 
@@ -28,10 +29,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/about', [DashboardController::class, 'about'])->name('about.index');
 
         Route::get('/cek-pajak', [DashboardController::class, 'taxCheck'])->name('tax-check.index');
-        // Rute dummy untuk menghindari error saat tombol "Bayar" ditekan
-        Route::get('/pembayaran/{id}', function () {
-            return "Halaman Pembayaran sedang dikembangkan.";
-        })->name('payment.create');
+        Route::get('/pembayaran/{id}', [PaymentController::class, 'create'])->name('payment.create');
+        Route::post('/pembayaran/{id}', [PaymentController::class, 'store'])->name('payment.store');
 
         // Reminder Resource
         Route::get('/pengingat', [ReminderController::class, 'index'])->name('reminder.index');

@@ -426,22 +426,36 @@
                                     </div>
 
                                     <!-- Modal Footer -->
-                                    <div class="bg-gray-50 px-6 py-4 sm:px-8 sm:py-4 mb-4 flex flex-col sm:flex-row gap-3">
-                                        <a href="{{ route('payment.create', $vehicle->id) }}" class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-4 rounded-xl font-medium hover:from-green-700 hover:to-emerald-700 transition-all">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                                            </svg>
-                                            Bayar Pajak
-                                        </a>
-                                        <a href="{{ route('reminder.index') }}" class="flex-1 inline-flex items-center justify-center gap-2 bg-[#4f46e5] text-white py-3 px-4 rounded-xl font-medium hover:from-indigo-700 hover:to-blue-700 transition-all">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-                                            </svg>
-                                            Atur Pengingat
-                                        </a>
-                                        <button onclick="closeVehicleDetail('{{ $vehicleId }}')" class="flex-1 bg-gray-200 text-gray-700 py-3 px-4 rounded-xl font-medium hover:bg-gray-300 transition-colors">
-                                            Tutup
-                                        </button>
+                                    <div class="bg-gray-50 px-6 py-4 sm:px-8 sm:py-4 mb-4">
+                                        <div class="flex flex-col sm:flex-row gap-3">
+                                            @if($daysLeft <= 365)
+                                                <a href="{{ route('payment.create', $vehicle->id) }}" class="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white py-3 px-4 rounded-xl font-medium hover:from-green-700 hover:to-emerald-700 transition-all">
+                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                                                    </svg>
+                                                    Bayar Pajak
+                                                </a>
+                                            @else
+                                                <button disabled class="flex-1 inline-flex items-center justify-center gap-2 bg-gray-300 text-gray-500 py-3 px-4 rounded-xl font-medium cursor-not-allowed">
+                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                                    </svg>
+                                                    Bayar Nanti
+                                                </button>
+                                            @endif
+                                            <a href="{{ route('reminder.index') }}" class="flex-1 inline-flex items-center justify-center gap-2 bg-[#4f46e5] text-white py-3 px-4 rounded-xl font-medium hover:from-indigo-700 hover:to-blue-700 transition-all">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                                </svg>
+                                                Atur Pengingat
+                                            </a>
+                                            <button onclick="closeVehicleDetail('{{ $vehicleId }}')" class="flex-1 bg-gray-200 text-gray-700 py-3 px-4 rounded-xl font-medium hover:bg-gray-300 transition-colors">
+                                                Tutup
+                                            </button>
+                                        </div>
+                                        @if($daysLeft > 365)
+                                            <p class="text-xs text-center text-gray-400 mt-3">Pembayaran hanya bisa H-365 sebelum jatuh tempo.</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

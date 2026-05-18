@@ -22,15 +22,16 @@
                         <h1 class="text-4xl font-bold text-[#4f46e5]">Rp {{ number_format($payment->amount, 0, ',', '.') }}</h1>
                     </div>
 
-                    @if(in_array($payment->bank, ['ALFAMART', 'INDOMARET']))
+                    @if(in_array($payment->bank, ['ALFAMART', 'INDOMARET', 'QRIS']))
                     <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-8 relative text-center">
-                        <p class="text-gray-500 text-sm font-medium mb-4">Kode Pembayaran {{ ucfirst(strtolower($payment->bank)) }}</p>
+                        <p class="text-gray-500 text-sm font-medium mb-4">{{ $payment->bank == 'QRIS' ? 'Scan QRIS untuk Membayar' : 'Kode Pembayaran ' . ucfirst(strtolower($payment->bank)) }}</p>
                         
                         <!-- QR Code -->
                         <div class="flex justify-center mb-6 p-4 bg-white rounded-xl border border-gray-200 inline-block">
                             {!! QrCode::size(200)->generate($payment->va_number) !!}
                         </div>
 
+                        @if($payment->bank != 'QRIS')
                         <div class="flex items-center justify-center gap-4">
                             <p id="va-number" class="text-2xl md:text-3xl font-bold tracking-wider text-gray-900">{{ $payment->va_number }}</p>
                             <button onclick="copyVA()" class="flex items-center justify-center w-10 h-10 bg-white rounded-xl shadow-sm border border-gray-200 text-gray-500 hover:text-[#4f46e5] hover:border-[#4f46e5] transition-colors" title="Salin Kode">
@@ -39,6 +40,7 @@
                                 </svg>
                             </button>
                         </div>
+                        @endif
                     </div>
                     @else
                     <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-8 relative">
@@ -75,6 +77,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         <p>Konfirmasikan atau tunjukkan kode barcode di atas ke kasir gerai {{ ucfirst(strtolower($payment->bank)) }} terdekat untuk melakukan pembayaran pajak Anda.</p>
+                    </div>
+                    @elseif($payment->bank == 'QRIS')
+                    <div class="bg-blue-50 text-blue-800 text-sm p-4 rounded-xl border border-blue-100 flex gap-3">
+                        <svg class="w-5 h-5 flex-shrink-0 text-blue-500 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p>Scan QR Code di atas. Pembayaran ini membutuhkan persetujuan/verifikasi dari pihak Admin kami.</p>
                     </div>
                     @else
                     <div class="bg-blue-50 text-blue-800 text-sm p-4 rounded-xl border border-blue-100 flex gap-3">

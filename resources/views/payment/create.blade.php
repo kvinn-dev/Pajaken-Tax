@@ -185,20 +185,22 @@
                                     </div>
                                 </div>
 
-                                <!-- QRIS (Coming Soon) -->
-                                <div class="border rounded-xl bg-gray-50 opacity-60 cursor-not-allowed">
-                                    <label class="flex items-center gap-4 p-4">
-                                        <input type="radio" name="payment_method" value="qris" disabled class="hidden">
-                                        <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <!-- QRIS -->
+                                <div class="border rounded-xl transition-all duration-300" :class="{ 'border-indigo-500 ring-2 ring-indigo-200': selectedMethod === 'qris' }">
+                                    <label @click="selectedMethod = 'qris'" class="flex items-center gap-4 p-4 cursor-pointer">
+                                        <input type="radio" name="payment_method" value="qris" x-model="selectedMethod" class="hidden">
+                                        <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors" :class="selectedMethod === 'qris' ? 'bg-indigo-100' : 'bg-gray-100'">
+                                            <svg class="w-5 h-5 transition-colors" :class="selectedMethod === 'qris' ? 'text-[#4f46e5]' : 'text-gray-500'" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-2m0 0H8m4-7a3 3 0 110 6 3 3 0 010-6z"></path>
                                             </svg>
                                         </div>
                                         <div>
-                                            <p class="font-semibold text-gray-500 text-sm">QRIS / E-Wallet</p>
-                                            <p class="text-xs text-gray-400">Gopay, OVO, Dana, ShopeePay</p>
+                                            <p class="font-semibold text-gray-900 text-sm">QRIS</p>
+                                            <p class="text-xs text-gray-500">Scan dengan aplikasi Mobile Banking/E-Wallet</p>
                                         </div>
-                                        <span class="ml-auto text-xs font-medium text-gray-400 bg-gray-200 px-2 py-1 rounded-full">Segera</span>
+                                        <div class="ml-auto w-5 h-5 border-2 rounded-full flex items-center justify-center" :class="selectedMethod === 'qris' ? 'border-[#4f46e5]' : 'border-gray-300'">
+                                            <div x-show="selectedMethod === 'qris'" class="w-2.5 h-2.5 bg-[#4f46e5] rounded-full"></div>
+                                        </div>
                                     </label>
                                 </div>
                             </div>

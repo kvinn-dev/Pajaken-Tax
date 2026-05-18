@@ -100,7 +100,7 @@
 
                     <!-- Payment Method -->
                     <div class="px-6 py-5">
-                        <form x-data="{ selectedMethod: 'va', selectedBank: '' }" action="{{ route('payment.store', $vehicle->id) }}" method="POST">
+                        <form x-data="{ selectedMethod: 'va', selectedBank: '', selectedRetail: '' }" action="{{ route('payment.store', $vehicle->id) }}" method="POST">
                             @csrf
                             <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Metode Pembayaran</h4>
 
@@ -129,7 +129,7 @@
                                         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                             @foreach(['bca', 'mandiri', 'bni', 'bri'] as $bank)
                                             <label class="flex flex-col items-center justify-center p-3 border rounded-lg cursor-pointer transition-all" :class="selectedBank === '{{ $bank }}' ? 'border-indigo-500 bg-indigo-50' : 'border-gray-200 hover:border-gray-300'">
-                                                <input type="radio" name="bank" value="{{ $bank }}" x-model="selectedBank" required class="hidden">
+                                                <input type="radio" name="bank" value="{{ $bank }}" x-model="selectedBank" class="hidden">
                                                 @if($bank == 'bca')
                                                 <img src="https://cdn.brandfetch.io/idrBYj0urD/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667599392055" alt="BCA" class="h-5" />
                                                 @elseif($bank == 'bni')
@@ -147,21 +147,42 @@
                                     </div>
                                 </div>
 
-                                <!-- Retail Outlet (Coming Soon) -->
-                                <div class="border rounded-xl bg-gray-50 opacity-60 cursor-not-allowed">
-                                    <label class="flex items-center gap-4 p-4">
-                                        <input type="radio" name="payment_method" value="retail" disabled class="hidden">
-                                        <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <!-- Retail Outlet -->
+                                <div class="border rounded-xl transition-all duration-300" :class="{ 'border-indigo-500 ring-2 ring-indigo-200': selectedMethod === 'retail' }">
+                                    <label @click="selectedMethod = 'retail'" class="flex items-center gap-4 p-4 cursor-pointer">
+                                        <input type="radio" name="payment_method" value="retail" x-model="selectedMethod" class="hidden">
+                                        <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors" :class="selectedMethod === 'retail' ? 'bg-indigo-100' : 'bg-gray-100'">
+                                            <svg class="w-5 h-5 transition-colors" :class="selectedMethod === 'retail' ? 'text-[#4f46e5]' : 'text-gray-500'" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                             </svg>
                                         </div>
                                         <div>
-                                            <p class="font-semibold text-gray-500 text-sm">Gerai Retail</p>
-                                            <p class="text-xs text-gray-400">Alfamart, Indomaret</p>
+                                            <p class="font-semibold text-gray-900 text-sm">Gerai Retail</p>
+                                            <p class="text-xs text-gray-500">Bayar via Gerai Retail Pilihan Anda</p>
                                         </div>
-                                        <span class="ml-auto text-xs font-medium text-gray-400 bg-gray-200 px-2 py-1 rounded-full">Segera</span>
+                                        <div class="ml-auto w-5 h-5 border-2 rounded-full flex items-center justify-center" :class="selectedMethod === 'retail' ? 'border-[#4f46e5]' : 'border-gray-300'">
+                                            <div x-show="selectedMethod === 'retail'" class="w-2.5 h-2.5 bg-[#4f46e5] rounded-full"></div>
+                                        </div>
                                     </label>
+
+                                    <!-- Retail Selection (collapsible) -->
+                                    <div x-show="selectedMethod === 'retail'" x-transition class="px-4 pb-4 pt-2 border-t border-gray-100">
+                                        <p class="text-xs text-gray-500 mb-3 font-medium">Pilih Gerai:</p>
+                                        <div class="grid grid-cols-2 sm:grid-cols-2 gap-3">
+                                            @foreach(['alfamart', 'indomaret'] as $store)
+                                            <label class="flex flex-col items-center justify-center p-4 border rounded-lg cursor-pointer transition-all" :class="selectedRetail === '{{ $store }}' ? 'border-indigo-500 bg-indigo-50' : 'border-gray-200 hover:border-gray-300'">
+                                                <input type="radio" name="retail_store" value="{{ $store }}" x-model="selectedRetail" class="hidden">
+                                                @if($store == 'alfamart')
+                                                <img src="https://cdn.brandfetch.io/idu0QXBANc/w/240/h/77/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1774923127372" alt="Alfamart" class="h-5" />
+                                                @elseif($store == 'indomaret')
+                                                <img src="https://cdn.brandfetch.io/idkdlyBdjR/w/500/h/187/theme/light/logo.png?c=1bxid64Mup7aczewSAYMX&t=1722963139375" alt="Indomaret" class="h-5" />
+                                                @else
+                                                <span class="font-semibold text-sm text-gray-700">{{ ucfirst($store) }}</span>
+                                                @endif
+                                            </label>
+                                            @endforeach
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!-- QRIS (Coming Soon) -->

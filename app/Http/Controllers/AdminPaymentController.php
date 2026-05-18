@@ -43,8 +43,8 @@ class AdminPaymentController extends Controller
         Notification::create([
             'user_id' => $payment->user_id,
             'type' => 'selesai',
-            'title' => 'Pembayaran Disetujui',
-            'message' => "Pembayaran pajak (VA {$payment->bank}) untuk kendaraan {$vehicle->no_polisi} berhasil diverifikasi admin. Jatuh tempo diperpanjang hingga {$newTaxDate->translatedFormat('d M Y')}.",
+            'title' => 'Pembayaran Berhasil',
+            'message' => "Pembayaran pajak melalui {$payment->bank} untuk kendaraan {$vehicle->no_polisi} berhasil diverifikasi admin. Jatuh tempo diperpanjang hingga {$newTaxDate->translatedFormat('d M Y')}.",
             'action_url' => route('tax-check.index'),
             'action_text' => 'Lihat Status',
         ]);
@@ -68,7 +68,7 @@ class AdminPaymentController extends Controller
             'user_id' => $payment->user_id,
             'type' => 'masalah',
             'title' => 'Pembayaran Ditolak',
-            'message' => "Pembayaran pajak (VA {$payment->bank}) untuk kendaraan {$payment->vehicle->no_polisi} ditolak. Pastikan nominal transfer sesuai. Silakan hubungi admin.",
+            'message' => "Pembayaran pajak melalui {$payment->bank} untuk kendaraan {$payment->vehicle->no_polisi} ditolak. Pastikan nominal pembayaran sesuai. Silakan hubungi admin.",
             'action_url' => route('payment.create', $payment->vehicle_id),
             'action_text' => 'Bayar Ulang',
         ]);

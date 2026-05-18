@@ -35,7 +35,7 @@
                         <div>
                             <h3 class="text-lg font-bold text-gray-900 leading-tight">{{ $vehicle->no_polisi }}</h3>
                             <p class="text-sm text-gray-500">{{ ucfirst($vehicle->jenis) }}</p>
-                        </div>s
+                        </div>
                     </div>
 
                     <!-- Bill Details -->
@@ -100,51 +100,90 @@
 
                     <!-- Payment Method -->
                     <div class="px-6 py-5">
-                        <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Metode Pembayaran</h4>
-
-                        <div class="space-y-3">
-                            <!-- VA Option - Active -->
-                            <label class="flex items-center gap-4 p-4 border-2 border-[#4f46e5] bg-indigo-50/50 rounded-xl cursor-pointer transition-all hover:shadow-md">
-                                <input type="radio" name="payment_method" checked class="w-5 h-5 text-[#4f46e5] focus:ring-[#4f46e5] focus:ring-offset-0">
-                                <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-5 h-5 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-900 text-sm">Virtual Account Bank</p>
-                                    <p class="text-xs text-gray-500">Transfer via BNI, BRI, Mandiri, BCA</p>
-                                </div>
-                                <div class="ml-auto">
-                                    <svg class="w-5 h-5 text-[#4f46e5]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
-                                    </svg>
-                                </div>
-                            </label>
-
-                            <!-- QRIS - Coming Soon -->
-                            <label class="flex items-center gap-4 p-4 border-2 border-gray-100 bg-gray-50/50 rounded-xl cursor-not-allowed opacity-60">
-                                <input type="radio" name="payment_method" disabled class="w-5 h-5 text-gray-300 focus:ring-0">
-                                <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-2m0 0H8m4-7a3 3 0 110 6 3 3 0 010-6z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-semibold text-gray-400 text-sm">QRIS / E-Wallet</p>
-                                    <p class="text-xs text-gray-400">Segera hadir</p>
-                                </div>
-                                <span class="ml-auto text-xs font-medium text-gray-400 bg-gray-100 px-2 py-1 rounded-full">Coming Soon</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Action -->
-                    <div class="px-6 pb-6">
-                        <form action="{{ route('payment.store', $vehicle->id) }}" method="POST">
+                        <form x-data="{ selectedMethod: 'va', selectedBank: '' }" action="{{ route('payment.store', $vehicle->id) }}" method="POST">
                             @csrf
+                            <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Metode Pembayaran</h4>
+
+                            <div class="space-y-3 mb-8">
+                                <!-- Virtual Account Option -->
+                                <div class="border rounded-xl transition-all duration-300" :class="{ 'border-indigo-500 ring-2 ring-indigo-200': selectedMethod === 'va' }">
+                                    <label @click="selectedMethod = 'va'" class="flex items-center gap-4 p-4 cursor-pointer">
+                                        <input type="radio" name="payment_method" value="va" x-model="selectedMethod" class="hidden">
+                                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-5 h-5 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-900 text-sm">Virtual Account</p>
+                                            <p class="text-xs text-gray-500">Transfer via Bank Pilihan Anda</p>
+                                        </div>
+                                        <div class="ml-auto w-5 h-5 border-2 rounded-full flex items-center justify-center" :class="selectedMethod === 'va' ? 'border-[#4f46e5]' : 'border-gray-300'">
+                                            <div x-show="selectedMethod === 'va'" class="w-2.5 h-2.5 bg-[#4f46e5] rounded-full"></div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Bank Selection (collapsible) -->
+                                    <div x-show="selectedMethod === 'va'" x-transition class="px-4 pb-4 pt-2 border-t border-gray-100">
+                                        <p class="text-xs text-gray-500 mb-3 font-medium">Pilih Bank:</p>
+                                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                            @foreach(['bca', 'mandiri', 'bni', 'bri'] as $bank)
+                                            <label class="flex flex-col items-center justify-center p-3 border rounded-lg cursor-pointer transition-all" :class="selectedBank === '{{ $bank }}' ? 'border-indigo-500 bg-indigo-50' : 'border-gray-200 hover:border-gray-300'">
+                                                <input type="radio" name="bank" value="{{ $bank }}" x-model="selectedBank" required class="hidden">
+                                                @if($bank == 'bca')
+                                                <img src="https://cdn.brandfetch.io/idrBYj0urD/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667599392055" alt="BCA" class="h-5" />
+                                                @elseif($bank == 'bni')
+                                                <img src="https://cdn.brandfetch.io/idVOhcVfnR/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1777869521811" alt="BNI" class="h-4" />
+                                                @elseif($bank == 'mandiri')
+                                                <img src="https://cdn.brandfetch.io/idCtRStnaP/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1668076451152" alt="Mandiri" class="h-6" />
+                                                @elseif($bank == 'bri')
+                                                <img src="https://cdn.brandfetch.io/id1zQd_XN4/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1668076435322" alt="BRI" class="h-5" />
+                                                @else
+                                                <img src="https://cdn.brandfetch.io/id1zQd_XN4/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1668076435322" alt="{{ strtoupper($bank) }}" class="h-6 mb-2" />
+                                                @endif
+                                            </label>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Retail Outlet (Coming Soon) -->
+                                <div class="border rounded-xl bg-gray-50 opacity-60 cursor-not-allowed">
+                                    <label class="flex items-center gap-4 p-4">
+                                        <input type="radio" name="payment_method" value="retail" disabled class="hidden">
+                                        <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-500 text-sm">Gerai Retail</p>
+                                            <p class="text-xs text-gray-400">Alfamart, Indomaret</p>
+                                        </div>
+                                        <span class="ml-auto text-xs font-medium text-gray-400 bg-gray-200 px-2 py-1 rounded-full">Segera</span>
+                                    </label>
+                                </div>
+
+                                <!-- QRIS (Coming Soon) -->
+                                <div class="border rounded-xl bg-gray-50 opacity-60 cursor-not-allowed">
+                                    <label class="flex items-center gap-4 p-4">
+                                        <input type="radio" name="payment_method" value="qris" disabled class="hidden">
+                                        <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-2m0 0H8m4-7a3 3 0 110 6 3 3 0 010-6z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-gray-500 text-sm">QRIS / E-Wallet</p>
+                                            <p class="text-xs text-gray-400">Gopay, OVO, Dana, ShopeePay</p>
+                                        </div>
+                                        <span class="ml-auto text-xs font-medium text-gray-400 bg-gray-200 px-2 py-1 rounded-full">Segera</span>
+                                    </label>
+                                </div>
+                            </div>
+
                             <button type="submit" class="w-full bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white py-4 px-6 rounded-xl font-semibold hover:from-[#4338ca] hover:to-[#1d4ed8] focus:ring-4 focus:ring-indigo-200 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-indigo-200/50 hover:shadow-xl hover:shadow-indigo-200/60 flex items-center justify-center gap-3">
-                                Bayar
+                                Lanjutkan Pembayaran
                             </button>
                         </form>
 

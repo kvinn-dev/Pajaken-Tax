@@ -16,7 +16,7 @@ class DashboardController extends Controller
         $nikRecord = null;
 
         // Ambil kendaraan jika NIK sudah terisi dan valid
-        if ($user->nik) {
+        if ($user && $user->nik) {
             $nikRecord = Nik::where('nik', $user->nik)->first();
             if ($nikRecord) {
                 $vehicles = Vehicle::where('nik_id', $nikRecord->id)->get();
@@ -33,7 +33,7 @@ class DashboardController extends Controller
         $nikRecord = null;
 
         // Ambil kendaraan jika NIK sudah terisi dan valid
-        if ($user->nik) {
+        if ($user && $user->nik) {
             $nikRecord = Nik::where('nik', $user->nik)->first();
             if ($nikRecord) {
                 $vehicles = Vehicle::where('nik_id', $nikRecord->id)->get();

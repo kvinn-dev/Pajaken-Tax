@@ -59,6 +59,13 @@
                     Push Notifikasi
                 </a>
 
+                <a href="{{ route('admin.payments.index') }}" class="flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-medium {{ request()->routeIs('admin.payments.*') ? 'bg-indigo-50 text-[#4f46e5]' : 'text-gray-600 hover:bg-gray-50' }} transition">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9zm-6 13a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
+                    </svg>
+                    Pembayaran
+                </a>
+
                 <div class="border-t border-gray-100 my-4"></div>
             </nav>
 

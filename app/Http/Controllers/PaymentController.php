@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Payment;
 use App\Models\Vehicle;
 use App\Models\Nik;
 use App\Models\Notification;
@@ -38,40 +39,52 @@ class PaymentController extends Controller
 
     public function store(Request $request, $id)
     {
+        $request->validate([
+            'payment_method' => 'required|in:va', // Hanya 'va' yang diizinkan untuk saat ini
+            'bank' => 'required_if:payment_method,va|in:bca,mandiri,bni,bri',
+        ]);
+
         $vehicle = Vehicle::findOrFail($id);
-        
-        // Cek autentikasi untuk memastikan keamanan
         $user = Auth::user();
         $vehicleNik = Nik::find($vehicle->nik_id);
         
         if (!$user->nik || !$vehicleNik || $user->nik !== $vehicleNik->nik) {
             abort(403, 'Anda tidak memiliki akses untuk membayar pajak kendaraan ini.');
         }
-        
-        // Update tanggal pajak (perpanjang 1 tahun)
-        $currentTaxDate = Carbon::parse($vehicle->tanggal_pajak);
-        $newTaxDate = $currentTaxDate->copy()->addYear();
-        
-        // Jika pajaknya sudah telat lebih dari setahun, paskan jatuhnya 1 tahun dari sekarang
-        if ($newTaxDate->isPast()) {
-            $newTaxDate = now()->addYear();
-        }
 
-        $vehicle->tanggal_pajak = $newTaxDate->format('Y-m-d');
-        $vehicle->save();
+        // Kalkulasi ulang biaya pajak untuk memastikan data akurat
+        $taxDate = Carbon::parse($vehicle->tanggal_pajak);
+        $isOverdue = $taxDate->isPast();
+        $daysOverdue = $isOverdue ? now()->diffInDays($taxDate, false) : 0;
+        $baseTax = strtolower($vehicle->jenis) == 'mobil' ? 1500000 : 250000;
+        $penalty = $isOverdue ? (abs($daysOverdue) * 2000) : 0;
+        $totalAmount = $baseTax + $penalty;
 
-        // Buat notifikasi berhasil untuk user
-        Notification::create([
-            'user_id' => Auth::id(),
-            'type' => 'selesai',
-            'title' => 'Pembayaran Berhasil',
-            'message' => "Pembayaran pajak untuk kendaraan {$vehicle->no_polisi} berhasil. Jatuh tempo berikutnya adalah {$newTaxDate->translatedFormat('d M Y')}.",
-            'action_url' => route('tax-check.index'),
-            'action_text' => 'Lihat Status',
+        // Generate Nomor Virtual Account (VA) secara acak
+        $vaNumber = '88' . rand(1000000000, 9999999999);
+
+        // Simpan sebagai Pending di tabel Payment
+        $payment = Payment::create([
+            'user_id' => $user->id,
+            'vehicle_id' => $vehicle->id,
+            'amount' => $totalAmount,
+            'bank' => strtoupper($request->bank),
+            'va_number' => $vaNumber,
+            'status' => 'pending',
         ]);
 
-        // Alihkan kembali ke halaman cek pajak dengan pesan sukses
-        return redirect()->route('tax-check.index')
-            ->with('success', "Pembayaran pajak untuk {$vehicle->no_polisi} berhasil diproses. Jatuh tempo diperpanjang hingga {$newTaxDate->translatedFormat('d M Y')}.");
+        // Redirect ke halaman invoice/VA
+        return redirect()->route('payment.show', $payment->id);
+    }
+
+    public function show($id)
+    {
+        $payment = Payment::with('vehicle')->findOrFail($id);
+        
+        if ($payment->user_id !== Auth::id()) {
+            abort(403, 'Anda tidak memiliki akses ke halaman ini.');
+        }
+
+        return view('payment.show', compact('payment'));
     }
 }

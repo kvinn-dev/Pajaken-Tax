@@ -22,6 +22,25 @@
                         <h1 class="text-4xl font-bold text-[#4f46e5]">Rp {{ number_format($payment->amount, 0, ',', '.') }}</h1>
                     </div>
 
+                    @if(in_array($payment->bank, ['ALFAMART', 'INDOMARET']))
+                    <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-8 relative text-center">
+                        <p class="text-gray-500 text-sm font-medium mb-4">Kode Pembayaran {{ ucfirst(strtolower($payment->bank)) }}</p>
+                        
+                        <!-- QR Code -->
+                        <div class="flex justify-center mb-6 p-4 bg-white rounded-xl border border-gray-200 inline-block">
+                            {!! QrCode::size(200)->generate($payment->va_number) !!}
+                        </div>
+
+                        <div class="flex items-center justify-center gap-4">
+                            <p id="va-number" class="text-2xl md:text-3xl font-bold tracking-wider text-gray-900">{{ $payment->va_number }}</p>
+                            <button onclick="copyVA()" class="flex items-center justify-center w-10 h-10 bg-white rounded-xl shadow-sm border border-gray-200 text-gray-500 hover:text-[#4f46e5] hover:border-[#4f46e5] transition-colors" title="Salin Kode">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    @else
                     <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-8 relative">
                         <p class="text-gray-500 text-sm font-medium mb-2">{{ $payment->bank }} Virtual Account</p>
                         <div class="flex items-center justify-between">
@@ -33,6 +52,7 @@
                             </button>
                         </div>
                     </div>
+                    @endif
 
                     <div class="space-y-4 mb-8">
                         <div class="flex justify-between items-center py-3 border-b border-gray-100">
@@ -49,12 +69,21 @@
                         </div>
                     </div>
 
+                    @if(in_array($payment->bank, ['ALFAMART', 'INDOMARET']))
+                    <div class="bg-blue-50 text-blue-800 text-sm p-4 rounded-xl border border-blue-100 flex gap-3">
+                        <svg class="w-5 h-5 flex-shrink-0 text-blue-500 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p>Konfirmasikan atau tunjukkan kode barcode di atas ke kasir gerai {{ ucfirst(strtolower($payment->bank)) }} terdekat untuk melakukan pembayaran pajak Anda.</p>
+                    </div>
+                    @else
                     <div class="bg-blue-50 text-blue-800 text-sm p-4 rounded-xl border border-blue-100 flex gap-3">
                         <svg class="w-5 h-5 flex-shrink-0 text-blue-500 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         <p>Lakukan transfer sesuai nominal di atas ke nomor Virtual Account. Pembayaran ini membutuhkan persetujuan/verifikasi dari pihak Admin kami. Anda akan menerima notifikasi jika pembayaran telah disetujui.</p>
                     </div>
+                    @endif
 
                     <div class="mt-8 text-center">
                         <a href="{{ route('tax-check.index') }}" class="inline-flex justify-center text-[#4f46e5] font-semibold hover:underline">Kembali ke Beranda</a>

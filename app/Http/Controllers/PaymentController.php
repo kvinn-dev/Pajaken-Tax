@@ -40,8 +40,9 @@ class PaymentController extends Controller
     public function store(Request $request, $id)
     {
         $request->validate([
-            'payment_method' => 'required|in:va', // Hanya 'va' yang diizinkan untuk saat ini
+            'payment_method' => 'required|in:va,retail',
             'bank' => 'required_if:payment_method,va|in:bca,mandiri,bni,bri',
+            'retail_store' => 'required_if:payment_method,retail|in:alfamart,indomaret',
         ]);
 
         $vehicle = Vehicle::findOrFail($id);
@@ -60,16 +61,22 @@ class PaymentController extends Controller
         $penalty = $isOverdue ? (abs($daysOverdue) * 2000) : 0;
         $totalAmount = $baseTax + $penalty;
 
-        // Generate Nomor Virtual Account (VA) secara acak
-        $vaNumber = '88' . rand(1000000000, 9999999999);
+        // Tentukan bank / ritel dan generate kode pembayarannya
+        if ($request->payment_method === 'va') {
+            $bankOrStore = strtoupper($request->bank);
+            $paymentCode = '88' . rand(1000000000, 9999999999); // VA 12 digit
+        } else {
+            $bankOrStore = strtoupper($request->retail_store);
+            $paymentCode = '11' . rand(100000000000, 999999999999); // Barcode 14 digit
+        }
 
         // Simpan sebagai Pending di tabel Payment
         $payment = Payment::create([
             'user_id' => $user->id,
             'vehicle_id' => $vehicle->id,
             'amount' => $totalAmount,
-            'bank' => strtoupper($request->bank),
-            'va_number' => $vaNumber,
+            'bank' => $bankOrStore,
+            'va_number' => $paymentCode,
             'status' => 'pending',
         ]);
 

@@ -40,7 +40,7 @@
 
                         <!-- Description -->
                         <p class="text-lg text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                            Halo, <strong class="text-gray-800">{{ Auth::user()->name }}</strong>!
+                            Halo, <strong class="text-gray-800">{{ Auth::check() ? Auth::user()->name : 'Pengunjung' }}</strong>!
                             Jangan biarkan denda pajak menumpuk. Cek status dan atur pengingat pajak kendaraan Anda sekarang juga.
                         </p>
 

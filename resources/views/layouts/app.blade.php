@@ -29,11 +29,14 @@
         <div class="nav-center">
             <a href="{{ route('dashboard') }}#beranda" class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">Beranda</a>
             <a href="{{ route('about.index') }}#about" class="nav-item {{ request()->routeIs('about.index') ? 'active' : '' }}">Tentang</a>
+            @auth
             <a href="{{ route('tax-check.index') }}" class="nav-item {{ request()->routeIs('tax-check.index') ? 'active' : '' }}">Cek Pajak</a>
             <a href="{{ route('reminder.index') }}" class="nav-item {{ request()->routeIs('reminder.index') ? 'active' : '' }}">Pengingat</a>
+            @endauth
         </div>
 
         <div class="nav-right">
+            @auth
             <!-- Notification Bell with Dropdown -->
             <div class="nav-bell-wrapper">
                 <!-- Notification Dropdown Overlay -->
@@ -136,6 +139,12 @@
                     <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name ?? 'User') }}&background=f0ebff&color=464fe5" alt="profile" />
                 </div>
             </a>
+            @else
+            <div style="display: flex; gap: 8px;">
+                <a href="{{ route('login') }}" style="padding: 8px 24px; background: #4f46e5; color: white; border-radius: 30px; font-weight: 600; text-decoration: none; font-size: 14px; transition: all 0.3s;">Login</a>
+                <a href="{{ route('register') }}" style="padding: 8px 24px; border: 1px solid #4f46e5; color: #4f46e5; border-radius: 30px; font-weight: 600; text-decoration: none; font-size: 14px; transition: all 0.3s;">Daftar</a>
+            </div>
+            @endauth
         </div>
     </header>
 

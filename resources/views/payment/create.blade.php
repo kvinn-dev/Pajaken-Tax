@@ -109,8 +109,8 @@
                                 <div class="border rounded-xl transition-all duration-300" :class="{ 'border-indigo-500 ring-2 ring-indigo-200': selectedMethod === 'va' }">
                                     <label @click="selectedMethod = 'va'" class="flex items-center gap-4 p-4 cursor-pointer">
                                         <input type="radio" name="payment_method" value="va" x-model="selectedMethod" class="hidden">
-                                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <svg class="w-5 h-5 text-[#4f46e5]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors" :class="selectedMethod === 'va' ? 'bg-indigo-100' : 'bg-gray-100'">
+                                            <svg class="w-5 h-5 transition-colors" :class="selectedMethod === 'va' ? 'text-[#4f46e5]' : 'text-gray-500'" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
                                             </svg>
                                         </div>
@@ -205,12 +205,12 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="w-full bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white py-4 px-6 rounded-xl font-semibold hover:from-[#4338ca] hover:to-[#1d4ed8] focus:ring-4 focus:ring-indigo-200 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-indigo-200/50 hover:shadow-xl hover:shadow-indigo-200/60 flex items-center justify-center gap-3">
+                            <button type="submit" class="w-full bg-gradient-to-r from-[#4f46e5] to-[#2563eb] text-white py-4 px-6 rounded-xl font-medium hover:from-[#4338ca] hover:to-[#1d4ed8] focus:ring-4 focus:ring-indigo-200 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-indigo-200/50 hover:shadow-xl hover:shadow-indigo-200/60 flex items-center justify-center gap-3">
                                 Lanjutkan Pembayaran
                             </button>
                         </form>
 
-                        <div class="flex items-center justify-center gap-2 mt-4 text-xs text-gray-400">
+                        <div class="flex items-center justify-center gap-2 mt-4 text-[13px] text-gray-400">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                             </svg>
@@ -221,7 +221,7 @@
 
                 <!-- Info Footer -->
                 <div class="text-center">
-                    <p class="text-xs text-gray-400">
+                    <p class="text-[13px] text-gray-400">
                         Butuh bantuan?
                         <a href="mailto:support@pajaken.id" class="text-[#4f46e5] font-medium hover:underline">Hubungi Support</a>
                     </p>

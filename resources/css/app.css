@@ -759,7 +759,6 @@ body {
 .nav-item.active {
     background: #4f46e5;
     color: #ffffff;
-    font-weight: 600;
     box-shadow:
         0 2px 8px rgba(79, 70, 229, 0.25),
         0 1px 2px rgba(79, 70, 229, 0.1);
@@ -1766,7 +1765,6 @@ body {
     padding: 10px 16px;
     border-radius: 6px;
     font-size: 14px;
-    font-weight: 600;
     margin-top: 25px;
     cursor: pointer;
     transition: all 0.3s;

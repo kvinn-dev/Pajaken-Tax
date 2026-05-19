@@ -181,7 +181,8 @@
 
             let currentDate = new Date(today.getFullYear(), today.getMonth(), 1);
             let selectedDate = null;
-            let reminders = @json($reminders ?? []);
+            let originalReminders = @json($reminders ?? []);
+            let reminders = [...originalReminders];
             let reminderEvents = [];
             let activeReminderPreviewDate = null; // For mini calendar preview
 
@@ -257,7 +258,7 @@
                 // Cek pengingat apa saja yang sudah diset untuk kendaraan ini
                 let existingTypes = [];
                 if (vehicleId) {
-                    existingTypes = reminders
+                    existingTypes = originalReminders
                         .filter(r => r.vehicle_id == vehicleId)
                         .map(r => String(r.reminder_type));
                 }
@@ -656,7 +657,7 @@
                     const vehicleId = parseInt(eventBlock.dataset.vehicleId, 10);
 
                     // Find the reminder which contains the vehicle data
-                    const reminder = reminders.find(r => r.vehicle_id === vehicleId);
+                    const reminder = originalReminders.find(r => r.vehicle_id === vehicleId);
                     if (reminder && reminder.vehicle) {
                         const vehicle = reminder.vehicle;
                         const dueDate = new Date(vehicle.tanggal_pajak);

@@ -141,8 +141,8 @@
             </a>
             @else
             <div style="display: flex; gap: 8px;">
-                <a href="{{ route('login') }}" style="padding: 8px 24px; background: #4f46e5; color: white; border-radius: 30px; font-weight: 600; text-decoration: none; font-size: 14px; transition: all 0.3s;">Login</a>
-                <a href="{{ route('register') }}" style="padding: 8px 24px; border: 1px solid #4f46e5; color: #4f46e5; border-radius: 30px; font-weight: 600; text-decoration: none; font-size: 14px; transition: all 0.3s;">Daftar</a>
+                <a href="{{ route('login') }}" style="padding: 8px 24px; background: #4f46e5; color: white; border-radius: 30px; font-weight: 500; text-decoration: none; font-size: 14px; transition: all 0.3s;">Login</a>
+                <a href="{{ route('register') }}" style="padding: 8px 24px; border: 1px solid #4f46e5; color: #4f46e5; border-radius: 30px; font-weight: 500; text-decoration: none; font-size: 14px; transition: all 0.3s;">Daftar</a>
             </div>
             @endauth
         </div>

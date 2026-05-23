@@ -190,9 +190,13 @@
                                     <label @click="selectedMethod = 'qris'" class="flex items-center gap-4 p-4 cursor-pointer">
                                         <input type="radio" name="payment_method" value="qris" x-model="selectedMethod" class="hidden">
                                         <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors" :class="selectedMethod === 'qris' ? 'bg-indigo-100' : 'bg-gray-100'">
-                                            <svg class="w-5 h-5 transition-colors" :class="selectedMethod === 'qris' ? 'text-[#4f46e5]' : 'text-gray-500'" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-2m0 0H8m4-7a3 3 0 110 6 3 3 0 010-6z"></path>
-                                            </svg>
+                                            <img
+                                                width="20"
+                                                height="20"
+                                                :src="selectedMethod === 'qris' 
+                                                    ? 'https://img.icons8.com/forma-regular-filled-sharp/24/4f46e5/qr-code.png' 
+                                                    : 'https://img.icons8.com/forma-regular-filled-sharp/24/6b7280/qr-code.png'"
+                                                alt="qr-code" />
                                         </div>
                                         <div>
                                             <p class="font-semibold text-gray-900 text-sm">QRIS</p>

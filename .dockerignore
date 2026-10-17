@@ -1,0 +1,77 @@
+# Git and Version Control
+.git
+.github
+.gitignore
+.gitattributes
+
+# Environment and Credentials
+.env
+.env.*
+!.env.example
+!.env.docker.example
+!.env.production.example
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+id_rsa*
+*service-account*.json
+
+# Dependencies (Installed cleanly inside Docker)
+/vendor
+/node_modules
+
+# Local Build Artifacts (Built fresh inside Docker)
+/public/build
+/public/hot
+/public/storage
+
+# Storage and Framework Caches
+storage/framework/cache/*
+!storage/framework/cache/.gitignore
+storage/framework/sessions/*
+!storage/framework/sessions/.gitignore
+storage/framework/views/*
+!storage/framework/views/.gitignore
+storage/logs/*
+!storage/logs/.gitignore
+storage/pail/*
+storage/*.key
+
+# Local Databases and Dumps
+*.sqlite
+*.sqlite-journal
+database/*.sqlite
+*.sql
+*.dump
+*.tar
+*.gz
+*.zip
+
+# Operating System and IDE Files
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+.zed
+.nova
+.cursor
+.codex
+.editorconfig
+*.swp
+*~
+*.bak
+*.tmp
+
+# Testing and Profiling
+.phpunit.cache
+.phpunit.result.cache
+_ide_helper.php
+Homestead.json
+Homestead.yaml
+
+# Docker Local Overrides & Docs
+compose.override.yaml
+compose.override.yml
+docker-compose.override.yml

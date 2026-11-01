@@ -1,58 +1,101 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Pajaken
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Pajaken merupakan aplikasi manajemen perpajakan berbasis web yang dirancang untuk mempermudah dan menyederhanakan berbagai proses terkait perpajakan melalui platform digital yang terintegrasi. Aplikasi ini menyediakan fitur untuk mendukung pengelolaan data perpajakan, perhitungan pajak, serta berbagai aktivitas administrasi perpajakan lainnya agar dapat dilakukan dengan lebih praktis dan efisien.
 
-## About Laravel
+Dikembangkan sebagai proyek akademik, Pajaken bertujuan menghadirkan solusi digital yang praktis melalui antarmuka yang mudah digunakan dan sistem aplikasi yang terstruktur.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Panduan Penggunaan Aplikasi (Alur Pengguna)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. Halaman Utama (Homepage) - Sebelum Login
+Saat pertama kali membuka aplikasi, pengguna akan disambut dengan halaman beranda. Pada tahap ini, *navbar* hanya menampilkan menu **Beranda** dan **Tentang**. Pengguna belum bisa menggunakan fitur utama seperti cek pajak atau pengingat sebelum melakukan login.
+> **Gambar Homepage (Belum Login):**
+> ![Homepage Guest](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj01.avif)
 
-## Learning Laravel
+### 2. Registrasi Akun
+Pengguna baru harus mendaftar melalui halaman **Buat Akun** dengan mengisi Nama Lengkap, Email, NIK (16 Digit), dan Password untuk dapat mengakses fitur perpajakan secara penuh.
+> **Gambar Halaman Register:**
+> ![Register Page](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj02.avif)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 3. Login ke Aplikasi
+Pengguna yang sudah memiliki akun dapat masuk melalui halaman **Selamat Datang** dengan mengisi Email dan Password. Tersedia juga opsi masuk menggunakan akun Google atau GitHub.
+> **Gambar Halaman Login:**
+> ![Login Page](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj03.avif)
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 4. Halaman Utama (Homepage) - Setelah Login
+Setelah berhasil login, antarmuka *homepage* akan menyesuaikan. *Navbar* akan menampilkan menu tambahan seperti **Cek Pajak** dan **Pengingat**, serta ikon profil dan notifikasi di pojok kanan atas. Sapaan personal (misalnya: "Halo, Andi Wijaya!") juga akan muncul.
+> **Gambar Homepage (Sudah Login):**
+> ![Homepage User](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj04.avif)
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### 5. Halaman Tentang (About)
+Halaman ini berisi informasi mengenai latar belakang, visi, misi, serta penjelasan lengkap tentang apa itu platform Pajaken dan bagaimana cara kerjanya.
+> **Gambar Halaman About:**
+> ![About Page](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj05.avif)
 
-## Agentic Development
+### 6. Halaman Cek Pajak & Pembayaran
+Halaman **Cek Pajak** menampilkan daftar kendaraan yang sudah didaftarkan dan terhubung dengan NIK pengguna. 
+- Pengguna dapat melihat status kendaraan (Aktif / Jatuh Tempo).
+- Pengguna dapat memperbarui NIK, mengambil data kendaraan baru, atau mereset daftar kendaraan.
+> **Gambar Halaman Cek Pajak (Daftar Kendaraan):**
+> ![Cek Pajak List](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj06.avif)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Saat mengklik **Detail** pada salah satu kendaraan, akan muncul modal berisi informasi lengkap kendaraan (Nama Pemilik, Nomor Polisi, Nomor Mesin, Nomor Rangka, Warna, Bahan Bakar, dll). 
+> **Gambar Modal Detail Kendaraan:**
+> ![Cek Pajak Detail Modal](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj07.avif)
 
-```bash
-composer require laravel/boost --dev
+Jika kendaraan sudah jatuh tempo, pengguna dapat menekan tombol **Bayar Pajak** yang akan mengarahkan ke halaman **Selesaikan Pembayaran**. Di sini pengguna dapat melihat rincian tagihan (Pajak Pokok + Denda) dan memilih metode pembayaran (Virtual Account bank, Gerai Retail, atau QRIS).
+> **Gambar Halaman Pembayaran:**
+> ![Payment Page](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj08.avif)
 
-php artisan boost:install
-```
+### 7. Halaman Pengingat (Reminder)
+Fitur ini memungkinkan pengguna untuk mengatur pengingat otomatis (3 hari, 7 hari, atau 30 hari) sebelum tanggal jatuh tempo pajak kendaraan. Halaman ini dilengkapi dengan antarmuka **Kalender** yang terintegrasi dengan jadwal jatuh tempo kendaraan pengguna.
+> **Gambar Halaman Pengingat:**
+> ![Reminder Page](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj09.avif)
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 8. Halaman Profil Pengguna
+Pada halaman ini, pengguna dapat melihat informasi profil mereka (Nama Depan, Nama Belakang, Email, No. Handphone). Pengguna juga dapat mengedit data profil dan memperbarui kata sandi (password) mereka.
+> **Gambar Halaman Profil:**
+> ![Profile Page](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj10.avif)
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Fitur Panel Admin
 
-## Code of Conduct
+Admin bertugas mengelola data pengguna, kendaraan, notifikasi, serta memverifikasi pembayaran pajak.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Dashboard Overview
+Halaman utama admin menampilkan ringkasan metrik secara *live* seperti Total Pengguna, Total Kendaraan, Jumlah Pajak Terlambat, Tren Bulanan, Status Pajak (Aktif/Mendekati/Terlambat), dan Distribusi Tipe Kendaraan.
+> **Gambar Dashboard Admin:**
+> ![Admin Dashboard](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj11.avif)
 
-## Security Vulnerabilities
+### 2. Manajemen Data Kendaraan
+Admin dapat melihat seluruh daftar kendaraan yang terdaftar di sistem. Pada halaman ini, admin memiliki akses untuk menambahkan data kendaraan baru ke dalam sistem.
+> **Gambar Manage Data Kendaraan:**
+> ![Admin Manage Vehicles](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj12.avif)
+> **Gambar Manage Data Kendaraan:**
+> ![Admin Manage Vehicles](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj13.avif)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 3. Push Notifikasi (Broadcast)
+Admin dapat mengirimkan notifikasi (siaran/pengumuman) kepada seluruh pengguna aplikasi. Notifikasi dapat dikategorikan berdasarkan jenis pemberitahuan tertentu.
+> **Gambar Push Notifikasi:**
+> ![Admin Push Notifications](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj14.avif)
 
-## License
+### 4. Manajemen Pembayaran
+Halaman ini menampilkan daftar transaksi pembayaran pajak. Admin dapat memantau status pembayaran (Pending, Disetujui, Ditolak) dan memproses permintaan persetujuan pembayaran dari pengguna.
+> **Gambar Manage Pembayaran:**
+> ![Admin Manage Payments](https://hdaphuncqwjfxysgmcew.supabase.co/storage/v1/object/public/images/pj15.avif)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## Struktur Project & Instalasi
+
+Untuk informasi lebih lanjut mengenai cara mengunduh project, konfigurasi database, migrasi, dan cara menjalankannya di komputer lokal, silakan baca panduan lengkapnya di file:
+
+**[INSTALLATION.md](INSTALLATION.md)**
+
+## Kontribusi
+Jika Anda ingin berkontribusi pada project ini, silakan lakukan *fork* pada repository ini, buat *branch* baru untuk fitur Anda, dan ajukan *Pull Request*.
+
+---
+*Copyright © 2026 Pajaken. All rights reserved.*
